@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ÁSZF – Wellbeing Social Hub Kft.</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&amp;family=Nunito+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+
+:root {
+  --teal:       #3BBFAD;
+  --teal-dark:  #2A9D8E;
+  --teal-light: #EAF8F6;
+  --teal-mid:   #C8EDE9;
+  --red:        #E8394A;
+  --navy:       #1D3A47;
+  --navy-2:     #2D5060;
+  --gray:       #4A5568;
+  --gray-lt:    #718096;
+  --border:     #D9ECEA;
+  --bg:         #F5FAFA;
+  --white:      #FFFFFF;
+  --text:       #2D3748;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+h1,h2,h3,h4,h5{font-family:'Nunito',sans-serif}
+.nav{background:var(--white);border-bottom:2px solid var(--teal-mid);display:flex;align-items:center;justify-content:space-between;padding:14px 60px;position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(59,191,173,.1)}
+.nav-logo img{height:42px;width:auto}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-links a{font-family:'Nunito',sans-serif;font-weight:700;font-size:14px;color:var(--gray);text-decoration:none;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--teal)}
+.nav-cta{background:var(--teal);color:white;font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;padding:10px 24px;border-radius:50px;text-decoration:none;transition:all .2s;box-shadow:0 4px 16px rgba(59,191,173,.3)}
+.nav-cta:hover{background:var(--teal-dark);transform:translateY(-1px)}
+footer{background:#101F28;padding:48px 60px 32px}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:40px}
+.footer-brand .footer-logo img{height:36px;margin-bottom:14px}
+.footer-brand p{font-size:13px;color:rgba(255,255,255,.35);line-height:1.7;max-width:240px}
+.footer-col h4{font-family:'Nunito',sans-serif;font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:14px}
+.footer-col a{display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:4px 0;transition:color .2s}
+.footer-col a:hover{color:var(--teal)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-bottom p{font-size:12px;color:rgba(255,255,255,.2)}
+.footer-bottom a{font-size:12px;color:rgba(255,255,255,.35);text-decoration:none;margin-left:16px}
+.footer-bottom a:hover{color:var(--teal)}
+.btn-primary{background:var(--teal);color:white;font-family:'Nunito',sans-serif;font-weight:800;font-size:15px;padding:15px 34px;border-radius:50px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .2s;box-shadow:0 8px 32px rgba(59,191,173,.4)}
+.btn-primary:hover{background:var(--teal-dark);transform:translateY(-2px)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:768px){
+  .nav{padding:12px 20px}.nav-links{display:none}
+  footer{padding:36px 20px}
+  .footer-top{grid-template-columns:1fr 1fr}
+  .footer-bottom{flex-direction:column;text-align:center}
+}
+
+.doc-hero{background:var(--navy);padding:60px 60px 40px;}
+.doc-hero h1{font-size:36px;font-weight:900;color:white;margin-bottom:10px}
+.doc-hero p{color:rgba(255,255,255,.5);font-size:14px}
+.doc-body{max-width:860px;margin:0 auto;padding:60px 60px;}
+.doc-body h2{font-family:'Nunito',sans-serif;font-size:20px;font-weight:800;color:var(--navy);margin:36px 0 12px;padding-bottom:8px;border-bottom:2px solid var(--teal-mid)}
+.doc-body h3{font-family:'Nunito',sans-serif;font-size:16px;font-weight:700;color:var(--navy);margin:20px 0 8px}
+.doc-body p{font-size:14px;color:var(--gray);line-height:1.8;margin-bottom:12px}
+.doc-body ul{margin:8px 0 14px 20px}
+.doc-body ul li{font-size:14px;color:var(--gray);line-height:1.8;margin-bottom:4px}
+.doc-body .info-box{background:var(--teal-light);border:1.5px solid var(--teal-mid);border-radius:12px;padding:20px 24px;margin:24px 0}
+.doc-body .info-box p{margin:0;font-size:13px}
+.doc-body .info-box strong{color:var(--navy)}
+.last-updated{font-size:12px;color:var(--gray-lt);margin-top:48px;padding-top:16px;border-top:1px solid var(--border)}
+@media(max-width:768px){.doc-hero,.doc-body{padding:40px 20px}}
+
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none;flex-shrink:0}
+.hamburger span{display:block;width:22px;height:2px;background:var(--navy,#1D3A47);border-radius:2px;transition:transform .3s,opacity .3s}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.open span:nth-child(2){opacity:0;transform:translateX(-8px)}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+@media(max-width:900px){.nav{flex-wrap:wrap;padding:12px 20px;gap:8px}.nav-logo{flex:1}.nav-logo img{height:36px}.logo{flex:1;font-size:14px}.hamburger{display:flex;order:5}.nav-cta{order:4;font-size:12px;padding:7px 14px;white-space:nowrap}.nav-links{display:none!important;width:100%;order:10;flex-direction:column;padding:8px 0 4px;gap:0;border-top:1px solid var(--teal-mid,#C8EDE9);margin-top:4px}.nav-links.open{display:flex!important}.nav-links a{padding:13px 0;border-bottom:1px solid var(--border,#D9ECEA);font-size:15px;width:100%;color:var(--navy,#1D3A47)!important;style:none!important}.nav-links a:last-child{border-bottom:none}}
+</style>
+</head>
+<body>
+<nav class="nav">
+<div class="nav-logo"><a href="index.html"><img alt="WSH Wellbeing Social Hub" src="data:image/jpeg;base64,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"/></a></div>
+<div class="nav-links"><a href="index.html#rolunk">Rólunk</a><a href="index.html#csomagok">Vállalati megoldások</a><a href="webinar-index.html">Webinárok</a><a href="blog-index.html">Tudástár</a><a href="partners-index.html">Partnerek</a><a href="index.html#kapcsolat">Kapcsolat</a></div><button class="hamburger" aria-label="Menü megnyitása"><span></span><span></span><span></span></button>
+<a class="nav-cta" href="webinar-7.html">🎯 Következő webinár →</a>
+</nav>
+<div class="doc-hero">
+<h1>Általános Szerződési Feltételek (ÁSZF)</h1>
+<p>Hatályos: 2026. március 1. | Wellbeing Social Hub Kft.</p>
+</div>
+<div class="doc-body">
+<div class="info-box">
+<p><strong>Szolgáltató adatai:</strong><br/>
+  Cégnév: Wellbeing Social Hub Kft.<br/>
+  Székhely: 2100 Gödöllő, Juhar u. 2.<br/>
+  Adószám: 32753099-2-13<br/>
+  Telefon: +36 70 967 8110<br/>
+  E-mail: <a class="__cf_email__" data-cfemail="a5cecadfd5cacbd1e5d2c0c9c9c7c0cccbc2d6cac6ccc4c9cdd0c78bcdd0" href="/cdn-cgi/l/email-protection">[email protected]</a><br/>
+  Weboldal: wellbeingsocialhub.hu</p>
+</div>
+<h2>1. Általános rendelkezések</h2>
+<h3>1.1 Az ÁSZF hatálya</h3>
+<p>Jelen Általános Szerződési Feltételek (továbbiakban: ÁSZF) a Wellbeing Social Hub Kft. (továbbiakban: Szolgáltató) által nyújtott munkahelyi egészségfejlesztési, tanácsadói és eseményszervezési szolgáltatásokra vonatkoznak.</p>
+<p>Az ÁSZF hatálya kiterjed minden olyan szerződéses jogviszonyra, amelyet a Szolgáltató magyarországi székhelyű gazdálkodó szervezetekkel, önálló vállalkozókkal és természetes személyekkel (továbbiakban: Ügyfél) köt.</p>
+<h3>1.2 Az ÁSZF elfogadása</h3>
+<p>A Szolgáltató szolgáltatásainak igénybevételével, illetve a szerződés aláírásával az Ügyfél elfogadja jelen ÁSZF rendelkezéseit. A Szolgáltató fenntartja a jogot az ÁSZF módosítására; a módosításokról az Ügyfeleket előzetesen értesíti.</p>
+<h2>2. A Szolgáltató tevékenysége</h2>
+<p>A Wellbeing Social Hub Kft. az alábbi főbb szolgáltatásokat nyújtja:</p>
+<ul>
+<li>Munkahelyi egészségfejlesztési programok tervezése, szervezése és lebonyolítása</li>
+<li>ESG-kompatibilis wellbeing stratégia tanácsadás</li>
+<li>Pszichoszociális kockázatfelmérés és -kezelés (ISO 45003 alapján)</li>
+<li>Online és hibrid webinár, esemény szervezése</li>
+<li>Wellbeing csomagok értékesítése és közvetítése</li>
+<li>Szakértői és tanácsadói tagság kezelése</li>
+<li>Partner ökoszisztéma koordinációja (FitPuli, CHEQ, Stressz-M, Health at Work)</li>
+</ul>
+<h2>3. Szerződéskötés és megrendelés</h2>
+<h3>3.1 Ajánlatkérés és ajánlatadás</h3>
+<p>Az Ügyfél az e-mail, weboldal vagy telefonon keresztül igényelhet ajánlatot. A Szolgáltató az igényfelmérést követő 5 munkanapon belül írásban küldi meg az árajánlatot.</p>
+<h3>3.2 A szerződés létrejötte</h3>
+<p>A szerződés az Ügyfél írásbeli visszaigazolásával (e-mail elfogadás vagy aláírt szerződés visszaküldése) jön létre. Szóbeli megállapodás csak írásban megerősítve érvényes.</p>
+<h3>3.3 Webinár regisztráció</h3>
+<p>Az ingyenes webinárokra való regisztráció a weboldalon elérhető regisztrációs űrlapon keresztül történik. A regisztráció elfogadásáról a Szolgáltató e-mailben értesíti a résztvevőt.</p>
+<h2>4. Díjak és fizetési feltételek</h2>
+<h3>4.1 Szolgáltatási díjak</h3>
+<p>A Szolgáltató aktuális árlistáját a weboldalon és az egyedi ajánlatokban teszi közzé. Az árak – eltérő jelölés hiányában – nettó összegek, melyekre az aktuális ÁFA kulcs kerül felszámításra.</p>
+<h3>4.2 Mini egészségfejlesztési csomagok árai</h3>
+<ul>
+<li>Alap csomag: 970 000 Ft + ÁFA</li>
+<li>Fejlesztői csomag: 1 670 000 Ft + ÁFA</li>
+<li>Prémium csomag: 2 870 000 Ft + ÁFA</li>
+</ul>
+<h3>4.3 Tagdíjak</h3>
+<ul>
+<li>Tanácsadói tagság: 120 000 Ft + ÁFA / év (60 000 Ft belépéskor, 60 000 Ft 6 hónap múlva)</li>
+<li>Céges tagság: 250 000 Ft + ÁFA / év</li>
+<li>Egyesületi upgrade (tanácsadói): 150 000 Ft + ÁFA / év</li>
+<li>Egyesületi upgrade (céges): 300 000 Ft + ÁFA / év</li>
+</ul>
+<h3>4.4 Fizetési feltételek</h3>
+<p>A számla kiállításától számított 8 napos fizetési határidővel, banki átutalással. Késedelmes fizetés esetén a Ptk. szerinti késedelmi kamat kerül felszámításra.</p>
+<h2>5. Teljesítés és felelősség</h2>
+<h3>5.1 Teljesítési határidő</h3>
+<p>A Szolgáltató a vállalt teljesítési határidőket betartja. Vis maior vagy az Ügyfélnek felróható okból bekövetkező késedelem esetén a Szolgáltató nem felelős a határidő be nem tartásáért.</p>
+<h3>5.2 Felelősség korlátozása</h3>
+<p>A Szolgáltató az általa nyújtott tanácsadói és szervezési szolgáltatások kapcsán gondossági (nem eredményköteles) kötelezettséget vállal. A Szolgáltató kártérítési felelőssége nem haladhatja meg az adott megrendelésre kifizetett díj összegét.</p>
+<h3>5.3 Partner szolgáltatók</h3>
+<p>A WSH Core Stack partnerek (FitPuli, CHEQ, Stressz-M, Health at Work) önálló jogi személyek; saját szolgáltatásaikért kizárólag ők felelősek. A Wellbeing Social Hub Kft. koordinátori és közvetítői szerepet tölt be.</p>
+<h2>6. Lemondás és elállás</h2>
+<h3>6.1 Esemény lemondása</h3>
+<p>Az eseménytől vagy workshoptól:</p>
+<ul>
+<li>15 nappal korábban: 100%-os visszatérítés</li>
+<li>8–14 nappal korábban: 50%-os visszatérítés</li>
+<li>7 napon belül: visszatérítés nem lehetséges</li>
+</ul>
+<h3>6.2 Tagság lemondása</h3>
+<p>A tagság a szerződéses időszak lejártával automatikusan megszűnik, ha az Ügyfél 30 nappal a lejárat előtt írásban nem jelzi megújítási szándékát. Az éves tagdíj nem visszatérítendő.</p>
+<h3>6.3 Elállási jog</h3>
+<p>Fogyasztóknak (természetes személyeknek) a vonatkozó jogszabályok szerint 14 napos elállási jog biztosított, kivéve ha a szolgáltatás teljesítése az elállási határidőn belül megkezdődött és az Ügyfél ehhez hozzájárult.</p>
+<h2>7. Szellemi tulajdon</h2>
+<p>A Szolgáltató által készített prezentációk, módszertani anyagok, webinár-felvételek és egyéb szellemi alkotások szerzői joga a Wellbeing Social Hub Kft.-t illeti. Azok harmadik felekkel való megosztása, sokszorosítása kizárólag előzetes írásbeli engedéllyel lehetséges.</p>
+<h2>8. Titoktartás</h2>
+<p>Mindkét fél kötelezi magát, hogy a szerződés teljesítése során tudomására jutott, a másik fél üzleti, pénzügyi vagy személyes adatait bizalmasan kezeli, és azokat harmadik félnek nem adja át. Ez a kötelezettség a szerződés megszűnése után is fennmarad.</p>
+<h2>9. Vegyes rendelkezések</h2>
+<h3>9.1 Alkalmazandó jog</h3>
+<p>Jelen ÁSZF-re a magyar jog az irányadó. A felek vitás kérdéseiket elsősorban tárgyalásos úton rendezik; ennek sikertelensége esetén a Gödöllői Járásbíróság, illetve hatáskörétől függően a Pest Vármegyei Törvényszék illetékes.</p>
+<h3>9.2 ÁSZF módosítása</h3>
+<p>A Szolgáltató fenntartja a jogot az ÁSZF egyoldalú módosítására. A módosításokról az érintett Ügyfeleket legalább 15 nappal korábban e-mailben értesíti. A folyamatos igénybevétel a módosítás elfogadásának minősül.</p>
+<p class="last-updated">Jelen ÁSZF 2026. március 1-jén lép hatályba. Wellbeing Social Hub Kft., Gödöllő, 2026.</p>
+</div>
+<footer>
+<div class="footer-top">
+<div class="footer-brand">
+<div class="footer-logo"><img src="wsh-logo-white.svg" alt="Wellbeing Social Hub"/></div>
+<p>ESG-kompatibilis munkahelyi jólléti ökoszisztéma. Mérhető, riportálható, board-szintű wellbeing stratégia.</p>
+</div>
+<div class="footer-col">
+<h4>Navigáció</h4>
+<a href="index.html#rolunk">Rólunk</a>
+<a href="partners-index.html">Partnerek</a>
+<a href="index.html#csomagok">Mini csomagok</a>
+<a href="webinar-index.html">Webinárok</a>
+<a href="index.html#kapcsolat">Kapcsolat</a>
+<a href="blog-index.html">Tudástár</a>
+</div>
+<div class="footer-col">
+<h4>Partner Stack</h4>
+<a href="https://fitpuli.hu" target="_blank">FitPuli</a>
+<a href="https://cheqbot.com" target="_blank">CHEQ</a>
+<a href="https://stressz-m.hu" target="_blank">Stressz-M</a>
+<a href="https://healthatwork.hu" target="_blank">Health at Work</a>
+<a href="https://galeriaoptika.hu/ceges-szemvizsgalat/" target="_blank">Galéria Optika</a>
+</div>
+<div class="footer-col">
+<h4>Jogi</h4>
+<a href="adatvedelmi.html">Adatkezelési tájékoztató</a>
+<a href="aszf.html">ÁSZF</a>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2026 Wellbeing Social Hub Kft. · Minden jog fenntartva · wellbeingsocialhub.hu</p>
+<div>
+<a href="adatvedelmi.html">Adatvédelem</a>
+<a href="aszf.html">ÁSZF</a>
+</div>
+</div>
+</footer><script>
+(function(){
+  var b=document.querySelector('.hamburger'),m=document.querySelector('.nav-links');
+  if(!b||!m)return;
+  b.addEventListener('click',function(e){
+    e.stopPropagation();
+    b.classList.toggle('open');
+    m.classList.toggle('open');
+    b.setAttribute('aria-label',m.classList.contains('open')?'Menü bezárása':'Menü megnyitása');
+  });
+  document.addEventListener('click',function(e){
+    if(!m.contains(e.target)&&!b.contains(e.target)){b.classList.remove('open');m.classList.remove('open');}
+  });
+  m.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){b.classList.remove('open');m.classList.remove('open');});
+  });
+})();
+</script>
+</body></html>

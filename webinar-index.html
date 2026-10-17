@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>WSH Webináriumok – Minden webinár egy helyen | Wellbeing Social Hub</title>
+<meta content="Közelgő és archív WSH webináriumok – szakmai párbeszéd HR-eseknek, felsővezetőknek és wellbeing szakembereknek. Ingyenes részvétel, regisztrációhoz kötött." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&amp;family=Nunito+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --teal:       #3BBFAD;
+    --teal-dark:  #2A9D8E;
+    --teal-light: #EAF8F6;
+    --teal-mid:   #C8EDE9;
+    --red:        #E8394A;
+    --navy:       #1D3A47;
+    --navy-light: #2D5060;
+    --gray:       #4A5568;
+    --gray-light: #718096;
+    --border:     #D9ECEA;
+    --bg:         #F5FAFA;
+    --white:      #FFFFFF;
+    --text:       #2D3748;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Nunito Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+  h1,h2,h3,h4,h5 { font-family: 'Nunito', sans-serif; }
+
+  /* ── NAV ── */
+  .nav {
+    background: var(--white); border-bottom: 2px solid var(--teal-mid);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 60px; position: sticky; top: 0; z-index: 100;
+    box-shadow: 0 2px 20px rgba(59,191,173,0.1);
+  }
+  .nav-logo img { height: 48px; width: auto; display: block; max-width: 200px; }
+  .nav-links { display: flex; gap: 28px; align-items: center; }
+  .nav-links a { color: var(--navy); text-decoration: none; font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 14px; transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--teal); }
+  .nav-cta {
+    background: var(--teal); color: white; font-family: 'Nunito', sans-serif;
+    font-weight: 700; font-size: 14px; padding: 10px 24px; border-radius: 50px;
+    text-decoration: none; transition: background 0.2s, transform 0.2s;
+    box-shadow: 0 4px 16px rgba(59,191,173,0.3);
+  }
+  .nav-cta:hover { background: var(--teal-dark); transform: translateY(-1px); }
+
+  /* ── PAGE HERO ── */
+  .page-hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    padding: 80px 60px 64px; position: relative; overflow: hidden;
+  }
+  .page-hero::before {
+    content: ''; position: absolute; top: -50px; right: -50px; width: 400px; height: 400px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(59,191,173,0.08) 0%, transparent 70%); pointer-events: none;
+  }
+  .page-hero-inner { max-width: 800px; position: relative; z-index: 2; }
+  .page-eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: rgba(59,191,173,0.15); border: 1.5px solid rgba(59,191,173,0.35);
+    border-radius: 50px; padding: 7px 16px; font-size: 12px; font-weight: 700;
+    color: var(--teal); letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 24px;
+  }
+  .page-eyebrow .dot { width: 7px; height: 7px; background: var(--teal); border-radius: 50%; }
+  .page-title {
+    font-family: 'Nunito', sans-serif; font-size: clamp(36px, 5vw, 60px);
+    font-weight: 900; color: white; line-height: 1.1; letter-spacing: -1px; margin-bottom: 20px;
+  }
+  .page-title em { font-style: normal; color: var(--teal); }
+  .page-desc { font-size: 18px; color: rgba(255,255,255,0.6); line-height: 1.7; max-width: 600px; margin-bottom: 36px; }
+  .page-stats { display: flex; gap: 40px; flex-wrap: wrap; }
+  .pstat { text-align: left; }
+  .pstat-num { font-family: 'Nunito', sans-serif; font-size: 30px; font-weight: 900; color: var(--teal); line-height: 1; }
+  .pstat-label { font-size: 12px; color: rgba(255,255,255,0.4); margin-top: 4px; }
+
+  /* ── UPCOMING BANNER ── */
+  .upcoming-banner {
+    background: white; border-top: 4px solid var(--teal);
+    padding: 60px 60px;
+  }
+  .upcoming-label {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--teal); color: white; font-family: 'Nunito', sans-serif;
+    font-weight: 800; font-size: 12px; padding: 6px 16px; border-radius: 50px;
+    margin-bottom: 28px; letter-spacing: 0.5px; text-transform: uppercase;
+  }
+  .upcoming-label .pulse {
+    width: 8px; height: 8px; background: white; border-radius: 50%;
+    animation: pulse 1.4s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+  .upcoming-card {
+    display: grid; grid-template-columns: 1fr auto; gap: 60px; align-items: center;
+    background: var(--bg); border: 2px solid var(--teal-mid); border-radius: 24px;
+    padding: 48px; position: relative; overflow: hidden;
+    transition: box-shadow 0.25s;
+  }
+  .upcoming-card:hover { box-shadow: 0 16px 56px rgba(59,191,173,0.15); }
+  .upcoming-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--teal); }
+  .uc-number {
+    font-family: 'Nunito', sans-serif; font-size: 11px; font-weight: 800;
+    color: var(--teal); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px;
+  }
+  .uc-title {
+    font-family: 'Nunito', sans-serif; font-size: clamp(22px, 3vw, 34px);
+    font-weight: 900; color: var(--navy); line-height: 1.15; margin-bottom: 12px; letter-spacing: -0.5px;
+  }
+  .uc-title em { font-style: normal; color: var(--teal); }
+  .uc-subtitle { font-size: 16px; color: var(--gray-light); margin-bottom: 20px; }
+  .uc-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 28px; }
+  .uc-tag { font-size: 12px; font-weight: 700; padding: 5px 12px; border-radius: 50px; background: rgba(59,191,173,0.1); color: var(--teal-dark); }
+  .uc-speakers { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px; }
+  .uc-speaker {
+    display: flex; align-items: center; gap: 8px;
+    background: white; border: 1.5px solid var(--border);
+    border-radius: 40px; padding: 6px 14px 6px 8px;
+  }
+  .uc-avatar { width: 30px; height: 30px; border-radius: 50%; background: var(--teal); display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 900; color: white; flex-shrink: 0; }
+  .uc-sname { font-size: 12px; font-weight: 700; color: var(--navy); font-family: 'Nunito', sans-serif; }
+  .uc-srole { font-size: 10px; color: var(--gray-light); }
+
+  .btn-upcoming {
+    background: var(--teal); color: white; font-family: 'Nunito', sans-serif;
+    font-weight: 800; font-size: 16px; padding: 16px 36px; border-radius: 50px;
+    text-decoration: none; display: inline-flex; align-items: center; gap: 10px;
+    transition: all 0.2s; box-shadow: 0 8px 28px rgba(59,191,173,0.35); white-space: nowrap;
+  }
+  .btn-upcoming:hover { background: var(--teal-dark); transform: translateY(-2px); }
+
+  .uc-meta-panel {
+    background: var(--navy); border-radius: 20px; padding: 28px 32px;
+    min-width: 240px; display: flex; flex-direction: column; gap: 20px;
+  }
+  .uc-meta-item {}
+  .uc-meta-label { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 4px; font-weight: 600; }
+  .uc-meta-value { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 16px; color: white; }
+  .uc-meta-sub { font-size: 11px; color: rgba(255,255,255,0.35); margin-top: 2px; }
+  .uc-free-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(59,191,173,0.15); border: 1.5px solid rgba(59,191,173,0.3);
+    border-radius: 50px; padding: 8px 14px; color: var(--teal);
+    font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 13px; margin-top: 4px;
+  }
+
+  /* ── PAST WEBINARS ── */
+  .past-section { padding: 72px 60px; }
+  .section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 48px; flex-wrap: wrap; gap: 16px; }
+  .section-eyebrow {
+    font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--teal-dark); font-weight: 800; display: flex; align-items: center; gap: 10px; margin-bottom: 10px;
+  }
+  .section-eyebrow::before { content: ''; width: 24px; height: 3px; background: var(--teal); border-radius: 2px; }
+  .section-title { font-family: 'Nunito', sans-serif; font-size: clamp(24px, 3vw, 36px); font-weight: 900; color: var(--navy); letter-spacing: -0.5px; }
+
+  .webinar-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+
+  .webinar-card {
+    background: white; border: 2px solid var(--border); border-radius: 20px; overflow: hidden;
+    transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s; display: flex; flex-direction: column;
+  }
+  .webinar-card:hover { border-color: var(--teal); box-shadow: 0 12px 48px rgba(59,191,173,0.12); transform: translateY(-3px); }
+
+  .wc-header { padding: 28px 28px 0; }
+  .wc-meta-row { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; }
+  .wc-type { font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 50px; background: rgba(59,191,173,0.1); color: var(--teal-dark); }
+  .wc-date { font-size: 12px; color: var(--gray-light); font-weight: 600; }
+  .wc-duration { font-size: 12px; color: var(--gray-light); }
+  .wc-icon { font-size: 36px; margin-bottom: 12px; }
+  .wc-num { font-family: 'Nunito', sans-serif; font-size: 11px; font-weight: 800; color: var(--teal); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px; }
+  .wc-title { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 19px; color: var(--navy); line-height: 1.25; margin-bottom: 12px; }
+  .wc-desc { font-size: 14px; color: var(--gray-light); line-height: 1.65; }
+
+  .wc-tags { display: flex; gap: 6px; flex-wrap: wrap; padding: 16px 28px 0; }
+  .wc-tag { font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 50px; background: var(--bg); color: var(--navy); border: 1px solid var(--border); }
+
+  .wc-footer {
+    margin-top: auto; padding: 20px 28px 24px;
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    border-top: 1px solid var(--border);
+  }
+  .wc-lock { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--gray-light); font-weight: 600; }
+  .wc-lock svg { color: var(--teal); }
+  .btn-read {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 13px;
+    color: var(--teal); text-decoration: none; transition: gap 0.2s;
+  }
+  .btn-read:hover { gap: 9px; }
+
+  /* ── CTA STRIP ── */
+  .cta-strip { background: var(--teal); padding: 56px 60px; }
+  .cta-inner { display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
+  .cta-text h3 { font-family: 'Nunito', sans-serif; font-size: 28px; font-weight: 900; color: white; margin-bottom: 8px; }
+  .cta-text p { font-size: 16px; color: rgba(255,255,255,0.75); }
+  .btn-white {
+    background: white; color: var(--teal); font-family: 'Nunito', sans-serif;
+    font-weight: 800; font-size: 15px; padding: 14px 34px; border-radius: 50px;
+    text-decoration: none; transition: all 0.2s; white-space: nowrap;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  }
+  .btn-white:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(0,0,0,0.2); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #0F2430; padding: 32px 60px;
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;
+  }
+  .footer-left { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+  .footer-logo img { height: 36px; width: auto; filter: brightness(0) invert(1); opacity: 0.6; }
+  .footer-links { display: flex; gap: 16px; flex-wrap: wrap; }
+  .footer-links a { font-size: 12px; color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--teal); }
+  .footer-right { font-size: 12px; color: rgba(255,255,255,0.25); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .nav { padding: 14px 24px; }
+    .nav-links { display: none; }
+    .page-hero { padding: 48px 24px 40px; }
+    .upcoming-banner { padding: 40px 24px; }
+    .upcoming-card { grid-template-columns: 1fr; gap: 32px; padding: 32px; }
+    .uc-meta-panel { min-width: unset; }
+    .past-section { padding: 48px 24px; }
+    .webinar-grid { grid-template-columns: 1fr; }
+    .cta-strip { padding: 40px 24px; }
+    footer { padding: 24px; }
+    .page-stats { gap: 24px; }
+  }
+
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none;flex-shrink:0}
+.hamburger span{display:block;width:22px;height:2px;background:var(--navy,#1D3A47);border-radius:2px;transition:transform .3s,opacity .3s}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.open span:nth-child(2){opacity:0;transform:translateX(-8px)}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+@media(max-width:900px){.nav{flex-wrap:wrap;padding:12px 20px;gap:8px}.nav-logo{flex:1}.nav-logo img{height:36px}.logo{flex:1;font-size:14px}.hamburger{display:flex;order:5}.nav-cta{order:4;font-size:12px;padding:7px 14px;white-space:nowrap}.nav-links{display:none!important;width:100%;order:10;flex-direction:column;padding:8px 0 4px;gap:0;border-top:1px solid var(--teal-mid,#C8EDE9);margin-top:4px}.nav-links.open{display:flex!important}.nav-links a{padding:13px 0;border-bottom:1px solid var(--border,#D9ECEA);font-size:15px;width:100%;color:var(--navy,#1D3A47)!important;style:none!important}.nav-links a:last-child{border-bottom:none}}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:36px}
+.footer-brand p{font-size:14px;color:rgba(255,255,255,.45);line-height:1.6;margin-top:14px;max-width:280px}
+.footer-col h4{font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;color:white;letter-spacing:.5px;margin-bottom:14px;text-transform:uppercase}
+.footer-col a{display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;margin-bottom:8px;transition:color .2s}
+.footer-col a:hover{color:var(--teal)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-bottom p{font-size:12px;color:rgba(255,255,255,.3)}
+.footer-bottom a{font-size:12px;color:rgba(255,255,255,.3);text-decoration:none;margin-left:16px}
+.footer-bottom a:hover{color:var(--teal)}
+.footer-logo img,.footer-logo svg{height:42px;width:auto}
+footer{background:#0F2430;padding:50px 60px 30px}
+@media(max-width:900px){.footer-top{grid-template-columns:1fr 1fr;gap:28px}.footer-bottom{flex-direction:column;text-align:center}}
+</style>
+</head>
+<body>
+<!-- NAV -->
+<nav class="nav">
+<a class="nav-logo" href="index.html">
+<img alt="Wellbeing Social Hub" src="wsh-logo-original.svg"/>
+</a>
+<div class="nav-links"><a href="index.html#rolunk">Rólunk</a><a href="index.html#csomagok">Vállalati megoldások</a><a href="webinar-index.html">Webinárok</a><a href="blog-index.html">Tudástár</a><a href="partners-index.html">Partnerek</a><a href="index.html#kapcsolat">Kapcsolat</a></div><button class="hamburger" aria-label="Menü megnyitása"><span></span><span></span><span></span></button>
+<a class="nav-cta" href="webinar-7.html">🎯 Következő webinár →</a>
+</nav>
+<!-- PAGE HERO -->
+<div class="page-hero">
+<div class="page-hero-inner">
+<div class="page-eyebrow"><span class="dot"></span> WSH Webináriumok</div>
+<h1 class="page-title">Szakmai párbeszéd,<br/><em>ami valóban számít</em></h1>
+<p class="page-desc">Ingyenes webináriumok HR-eseknek, felsővezetőknek és wellbeing szakembereknek. Valódi tapasztalatok, nem tankönyvi válaszok.</p>
+<div class="page-stats">
+<div class="pstat"><div class="pstat-num">6</div><div class="pstat-label">webinár összesen a sorozatban</div></div>
+<div class="pstat"><div class="pstat-num">490+</div><div class="pstat-label">résztvevő a sorozat eddigi eseményein</div></div>
+<div class="pstat"><div class="pstat-num">0 Ft</div><div class="pstat-label">minden webinár teljesen ingyenes</div></div>
+</div>
+</div>
+</div>
+<!-- UPCOMING WEBINARS -->
+<div class="upcoming-banner">
+<div class="upcoming-label"><span class="pulse"></span>2 közelgő esemény</div>
+<div style="display:grid;gap:24px;">
+<div class="upcoming-card">
+<div>
+<div class="uc-number">Webinár #5</div>
+<h2 class="uc-title">A felsővezetői kiégés<br/><em>ne legyen tabutéma!</em></h2>
+<p class="uc-subtitle">Tapasztalatok és megoldások vezetőktől</p>
+<div class="uc-tags"><span class="uc-tag">🔥 Burnout</span><span class="uc-tag">👤 Felsővezető</span><span class="uc-tag">🧠 Megküzdési stratégiák</span><span class="uc-tag">🏢 Vállalati kultúra</span></div>
+<div class="uc-speakers">
+<div class="uc-speaker"><div class="uc-avatar">KS</div><div><div class="uc-sname">Kaszab Stella</div><div class="uc-srole">Executive coach</div></div></div>
+<div class="uc-speaker"><div class="uc-avatar">KL</div><div><div class="uc-sname">Kerékgyártó Laura</div><div class="uc-srole">HR vezető · Euroapi</div></div></div>
+<div class="uc-speaker"><div class="uc-avatar">NK</div><div><div class="uc-sname">Németh Kornél</div><div class="uc-srole">Ügyvezető · Rossmann</div></div></div>
+<div class="uc-speaker"><div class="uc-avatar">FI</div><div><div class="uc-sname">Faragó István</div><div class="uc-srole">WSH alapító</div></div></div>
+</div>
+<a class="btn-upcoming" href="webinar-5.html"><svg fill="none" height="18" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="18"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>Regisztrálok – Ingyenes</a>
+</div>
+<div class="uc-meta-panel">
+<div class="uc-meta-item"><div class="uc-meta-label">Dátum</div><div class="uc-meta-value">2026. ápr. 15.</div><div class="uc-meta-sub">Szerda</div></div>
+<div class="uc-meta-item"><div class="uc-meta-label">Időpont</div><div class="uc-meta-value">13:00 – 14:30</div><div class="uc-meta-sub">90 perc + Q&amp;A</div></div>
+<div class="uc-meta-item"><div class="uc-meta-label">Platform</div><div class="uc-meta-value">Microsoft Teams</div><div class="uc-meta-sub">Online · Link e-mailben</div></div>
+<div><div class="uc-free-badge"><svg fill="none" height="14" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="14"><polyline points="20 6 9 17 4 12"></polyline></svg>Ingyenes részvétel</div></div>
+</div>
+</div>
+<div class="upcoming-card">
+<div>
+<div class="uc-number">Webinár #6</div>
+<h2 class="uc-title">Mentális egészségfejlesztés –<br/><em>tradicionális és alternatív utak</em></h2>
+<p class="uc-subtitle">Pszichológia, agykutatás és alternatív módszerek egy kerekasztalban</p>
+<div class="uc-tags"><span class="uc-tag">🧠 Pszichológia</span><span class="uc-tag">⚡ Neurotudomány</span><span class="uc-tag">🎵 Alternatív módszerek</span><span class="uc-tag">🏢 HR · ESG</span></div>
+<div class="uc-speakers">
+<div class="uc-speaker"><div class="uc-avatar">ÜA</div><div><div class="uc-sname">Üveges Anna</div><div class="uc-srole">Pszichológus</div></div></div>
+<div class="uc-speaker"><div class="uc-avatar">SzL</div><div><div class="uc-sname">Szalóki László</div><div class="uc-srole">Kognitív kutató</div></div></div>
+<div class="uc-speaker"><div class="uc-avatar">NL</div><div><div class="uc-sname">Németh László</div><div class="uc-srole">Tréner · Coach</div></div></div>
+<div class="uc-speaker"><div class="uc-avatar">FI</div><div><div class="uc-sname">Faragó István</div><div class="uc-srole">WSH alapító</div></div></div>
+</div>
+<a class="btn-upcoming" href="webinar-6.html"><svg fill="none" height="18" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="18"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>Megnézem a landing oldalt</a>
+</div>
+<div class="uc-meta-panel">
+<div class="uc-meta-item"><div class="uc-meta-label">Dátum</div><div class="uc-meta-value">2026. máj. 8.</div><div class="uc-meta-sub">Péntek</div></div>
+<div class="uc-meta-item"><div class="uc-meta-label">Időpont</div><div class="uc-meta-value">13:00 – 14:30</div><div class="uc-meta-sub">90 perc + Q&amp;A</div></div>
+<div class="uc-meta-item"><div class="uc-meta-label">Platform</div><div class="uc-meta-value">Microsoft Teams</div><div class="uc-meta-sub">Online · Link e-mailben</div></div>
+<div><div class="uc-free-badge"><svg fill="none" height="14" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="14"><polyline points="20 6 9 17 4 12"></polyline></svg>Ingyenes részvétel</div></div>
+</div>
+</div>
+</div>
+</div>
+<!-- PAST WEBINARS -->
+<section class="past-section">
+<div class="section-header">
+<div>
+<div class="section-eyebrow">Archív</div>
+<div class="section-title">Korábbi webináriumok</div>
+</div>
+<a href="blog-index.html" style="font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 14px; color: var(--teal); text-decoration: none; display: flex; align-items: center; gap: 6px;">
+      Összes tartalom a Blogon →
+    </a>
+</div>
+<div class="webinar-grid">
+<!-- WEBINAR 4 -->
+<div class="webinar-card">
+<div class="wc-header">
+<div class="wc-meta-row">
+<span class="wc-type">Webinár összefoglaló</span>
+<span class="wc-date">2026. március 18.</span>
+<span class="wc-duration">90 perc</span>
+</div>
+<div class="wc-icon">🌿</div>
+<div class="wc-num">Webinár #4</div>
+<div class="wc-title">Egészségnapok ESG-kompatibilisen – így csináld jól</div>
+<p class="wc-desc">Hogyan szervezzünk valódi hatású egészségnapokat, amelyek megfelelnek az ESG-elvárásoknak és mérhetően javítják a munkavállalói jóllétet?</p>
+</div>
+<div class="wc-tags">
+<span class="wc-tag">ESG</span>
+<span class="wc-tag">Egészségnap</span>
+<span class="wc-tag">Wellbeing</span>
+</div>
+<div class="wc-footer">
+<div class="wc-lock">
+<svg fill="none" height="13" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="13"><rect height="11" rx="2" width="18" x="3" y="11"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          Anyagok regisztrációval
+        </div>
+<a class="btn-read" href="https://www.wellbeingsocialhub.hu/webinar-4.html">Összefoglaló →</a>
+</div>
+</div>
+<!-- WEBINAR 3 -->
+<div class="webinar-card">
+<div class="wc-header">
+<div class="wc-meta-row">
+<span class="wc-type">Webinár összefoglaló</span>
+<span class="wc-date">2026. február 26.</span>
+<span class="wc-duration">90 perc</span>
+</div>
+<div class="wc-icon">😊</div>
+<div class="wc-num">Webinár #3</div>
+<div class="wc-title">Boldogan a Munkahelyen! – Jóga + gyümölcsnap ≠ biztonság</div>
+<p class="wc-desc">A munkahelyi jóllét nem HR-trend. Milyen érzelmi és kommunikációs környezetet termel a szervezet? +172 résztvevő.</p>
+</div>
+<div class="wc-tags">
+<span class="wc-tag">Jóllét</span>
+<span class="wc-tag">Szervezeti kultúra</span>
+<span class="wc-tag">Pszichológiai biztonság</span>
+</div>
+<div class="wc-footer">
+<div class="wc-lock">
+<svg fill="none" height="13" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="13"><rect height="11" rx="2" width="18" x="3" y="11"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          Anyagok regisztrációval
+        </div>
+<a class="btn-read" href="https://www.wellbeingsocialhub.hu/webinar-3.html">Összefoglaló →</a>
+</div>
+</div>
+<!-- WEBINAR 2 -->
+<div class="webinar-card">
+<div class="wc-header">
+<div class="wc-meta-row">
+<span class="wc-type">Webinár összefoglaló</span>
+<span class="wc-date">2025. december 4.</span>
+<span class="wc-duration">90 perc</span>
+</div>
+<div class="wc-icon">🏥</div>
+<div class="wc-num">Webinár #2</div>
+<div class="wc-title">Egészségprevenció 2026 – Hogyan lesz az üzemorvosi vizsgálatból valódi egészségstratégia?</div>
+<p class="wc-desc">A prevenció többé nem extra – stratégiai kérdés. Hogyan egészíthető ki a kötelező üzemorvosi rendszer modern, mérhető egészségmodellel?</p>
+</div>
+<div class="wc-tags">
+<span class="wc-tag">Prevenció</span>
+<span class="wc-tag">Egészségstratégia</span>
+<span class="wc-tag">OECD</span>
+</div>
+<div class="wc-footer">
+<div class="wc-lock">
+<svg fill="none" height="13" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="13"><rect height="11" rx="2" width="18" x="3" y="11"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          Anyagok regisztrációval
+        </div>
+<a class="btn-read" href="https://www.wellbeingsocialhub.hu/webinar-2.html">Összefoglaló →</a>
+</div>
+</div>
+<!-- WEBINAR 1 -->
+<div class="webinar-card">
+<div class="wc-header">
+<div class="wc-meta-row">
+<span class="wc-type">Webinár összefoglaló</span>
+<span class="wc-date">2025. november 27.</span>
+<span class="wc-duration">90 perc</span>
+</div>
+<div class="wc-icon">🧠</div>
+<div class="wc-num">Webinár #1</div>
+<div class="wc-title">Mentális JÓLLÉT mint versenyelőny – Nemzetközi modellek, hazai megoldások</div>
+<p class="wc-desc">OECD tanulmány a szubjektív jóllétről, WHO és MHA ajánlások. 3 nagyvállalat vezető osztotta meg tapasztalatát. +107 résztvevő.</p>
+</div>
+<div class="wc-tags">
+<span class="wc-tag">Mentális jóllét</span>
+<span class="wc-tag">WHO</span>
+<span class="wc-tag">Versenyelőny</span>
+</div>
+<div class="wc-footer">
+<div class="wc-lock">
+<svg fill="none" height="13" stroke="currentColor" stroke-width="2.5" viewbox="0 0 24 24" width="13"><rect height="11" rx="2" width="18" x="3" y="11"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          Anyagok regisztrációval
+        </div>
+<a class="btn-read" href="https://www.wellbeingsocialhub.hu/webinar-1.html">Összefoglaló →</a>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA STRIP -->
+<div class="cta-strip">
+<div class="cta-inner">
+<div class="cta-text">
+<h3>Nem voltál ott? Nézd vissza az anyagokat!</h3>
+<p>Regisztrálj és hozzáférsz az összes webinár felvételéhez, prezentációjához és összefoglalójához – ingyen.</p>
+</div>
+<a class="btn-white" href="index.html#kapcsolat">Anyagok letöltése →</a>
+</div>
+</div>
+<!-- FOOTER -->
+<footer>
+<div class="footer-top">
+<div class="footer-brand">
+<div class="footer-logo"><img src="wsh-logo-white.svg" alt="Wellbeing Social Hub"/></div>
+<p>ESG-kompatibilis munkahelyi jólléti ökoszisztéma. Mérhető, riportálható, board-szintű wellbeing stratégia.</p>
+</div>
+<div class="footer-col">
+<h4>Navigáció</h4>
+<a href="index.html#rolunk">Rólunk</a>
+<a href="partners-index.html">Partnerek</a>
+<a href="index.html#csomagok">Mini csomagok</a>
+<a href="webinar-index.html">Webinárok</a>
+<a href="index.html#kapcsolat">Kapcsolat</a>
+<a href="blog-index.html">Tudástár</a>
+</div>
+<div class="footer-col">
+<h4>Partner Stack</h4>
+<a href="https://fitpuli.hu" target="_blank">FitPuli</a>
+<a href="https://cheqbot.com" target="_blank">CHEQ</a>
+<a href="https://stressz-m.hu" target="_blank">Stressz-M</a>
+<a href="https://healthatwork.hu" target="_blank">Health at Work</a>
+<a href="https://galeriaoptika.hu/ceges-szemvizsgalat/" target="_blank">Galéria Optika</a>
+</div>
+<div class="footer-col">
+<h4>Jogi</h4>
+<a href="adatvedelmi.html">Adatkezelési tájékoztató</a>
+<a href="aszf.html">ÁSZF</a>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2026 Wellbeing Social Hub Kft. · Minden jog fenntartva · wellbeingsocialhub.hu</p>
+<div>
+<a href="adatvedelmi.html">Adatvédelem</a>
+<a href="aszf.html">ÁSZF</a>
+</div>
+</div>
+</footer>
+<script>
+(function(){
+  var b=document.querySelector('.hamburger'),m=document.querySelector('.nav-links');
+  if(!b||!m)return;
+  b.addEventListener('click',function(e){
+    e.stopPropagation();
+    b.classList.toggle('open');
+    m.classList.toggle('open');
+    b.setAttribute('aria-label',m.classList.contains('open')?'Menü bezárása':'Menü megnyitása');
+  });
+  document.addEventListener('click',function(e){
+    if(!m.contains(e.target)&&!b.contains(e.target)){b.classList.remove('open');m.classList.remove('open');}
+  });
+  m.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){b.classList.remove('open');m.classList.remove('open');});
+  });
+})();
+</script>
+</body>
+</html>

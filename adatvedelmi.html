@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Adatvédelmi tájékoztató – Wellbeing Social Hub Kft.</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&amp;family=Nunito+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+
+:root {
+  --teal:       #3BBFAD;
+  --teal-dark:  #2A9D8E;
+  --teal-light: #EAF8F6;
+  --teal-mid:   #C8EDE9;
+  --red:        #E8394A;
+  --navy:       #1D3A47;
+  --navy-2:     #2D5060;
+  --gray:       #4A5568;
+  --gray-lt:    #718096;
+  --border:     #D9ECEA;
+  --bg:         #F5FAFA;
+  --white:      #FFFFFF;
+  --text:       #2D3748;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+h1,h2,h3,h4,h5{font-family:'Nunito',sans-serif}
+.nav{background:var(--white);border-bottom:2px solid var(--teal-mid);display:flex;align-items:center;justify-content:space-between;padding:14px 60px;position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(59,191,173,.1)}
+.nav-logo img{height:42px;width:auto}
+.nav-links{display:flex;align-items:center;gap:28px}
+.nav-links a{font-family:'Nunito',sans-serif;font-weight:700;font-size:14px;color:var(--gray);text-decoration:none;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--teal)}
+.nav-cta{background:var(--teal);color:white;font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;padding:10px 24px;border-radius:50px;text-decoration:none;transition:all .2s;box-shadow:0 4px 16px rgba(59,191,173,.3)}
+.nav-cta:hover{background:var(--teal-dark);transform:translateY(-1px)}
+footer{background:#101F28;padding:48px 60px 32px}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:40px}
+.footer-brand .footer-logo img{height:36px;margin-bottom:14px}
+.footer-brand p{font-size:13px;color:rgba(255,255,255,.35);line-height:1.7;max-width:240px}
+.footer-col h4{font-family:'Nunito',sans-serif;font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:14px}
+.footer-col a{display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;padding:4px 0;transition:color .2s}
+.footer-col a:hover{color:var(--teal)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-bottom p{font-size:12px;color:rgba(255,255,255,.2)}
+.footer-bottom a{font-size:12px;color:rgba(255,255,255,.35);text-decoration:none;margin-left:16px}
+.footer-bottom a:hover{color:var(--teal)}
+.btn-primary{background:var(--teal);color:white;font-family:'Nunito',sans-serif;font-weight:800;font-size:15px;padding:15px 34px;border-radius:50px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .2s;box-shadow:0 8px 32px rgba(59,191,173,.4)}
+.btn-primary:hover{background:var(--teal-dark);transform:translateY(-2px)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:768px){
+  .nav{padding:12px 20px}.nav-links{display:none}
+  footer{padding:36px 20px}
+  .footer-top{grid-template-columns:1fr 1fr}
+  .footer-bottom{flex-direction:column;text-align:center}
+}
+
+.doc-hero{background:var(--navy);padding:60px 60px 40px}
+.doc-hero h1{font-size:36px;font-weight:900;color:white;margin-bottom:10px}
+.doc-hero p{color:rgba(255,255,255,.5);font-size:14px}
+.doc-body{max-width:860px;margin:0 auto;padding:60px 60px}
+.doc-body h2{font-family:'Nunito',sans-serif;font-size:20px;font-weight:800;color:var(--navy);margin:36px 0 12px;padding-bottom:8px;border-bottom:2px solid var(--teal-mid)}
+.doc-body h3{font-family:'Nunito',sans-serif;font-size:16px;font-weight:700;color:var(--navy);margin:20px 0 8px}
+.doc-body p{font-size:14px;color:var(--gray);line-height:1.8;margin-bottom:12px}
+.doc-body ul{margin:8px 0 14px 20px}
+.doc-body ul li{font-size:14px;color:var(--gray);line-height:1.8;margin-bottom:4px}
+.doc-body table{width:100%;border-collapse:collapse;margin:16px 0;font-size:13px}
+.doc-body table th{background:var(--navy);color:white;padding:10px 14px;text-align:left;font-family:'Nunito',sans-serif;font-weight:700}
+.doc-body table td{padding:10px 14px;border-bottom:1px solid var(--border);color:var(--gray);vertical-align:top}
+.doc-body table tr:nth-child(even) td{background:var(--teal-light)}
+.info-box{background:var(--teal-light);border:1.5px solid var(--teal-mid);border-radius:12px;padding:20px 24px;margin:24px 0}
+.info-box p{margin:0;font-size:13px}
+.info-box strong{color:var(--navy)}
+.rights-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0}
+.right-item{background:white;border:1.5px solid var(--border);border-radius:12px;padding:18px}
+.right-item .ri-title{font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;color:var(--navy);margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.right-item p{font-size:12px;color:var(--gray-lt);margin:0;line-height:1.6}
+.last-updated{font-size:12px;color:var(--gray-lt);margin-top:48px;padding-top:16px;border-top:1px solid var(--border)}
+@media(max-width:768px){.doc-hero,.doc-body{padding:40px 20px}.rights-grid{grid-template-columns:1fr}}
+
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none;flex-shrink:0}
+.hamburger span{display:block;width:22px;height:2px;background:var(--navy,#1D3A47);border-radius:2px;transition:transform .3s,opacity .3s}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.open span:nth-child(2){opacity:0;transform:translateX(-8px)}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+@media(max-width:900px){.nav{flex-wrap:wrap;padding:12px 20px;gap:8px}.nav-logo{flex:1}.nav-logo img{height:36px}.logo{flex:1;font-size:14px}.hamburger{display:flex;order:5}.nav-cta{order:4;font-size:12px;padding:7px 14px;white-space:nowrap}.nav-links{display:none!important;width:100%;order:10;flex-direction:column;padding:8px 0 4px;gap:0;border-top:1px solid var(--teal-mid,#C8EDE9);margin-top:4px}.nav-links.open{display:flex!important}.nav-links a{padding:13px 0;border-bottom:1px solid var(--border,#D9ECEA);font-size:15px;width:100%;color:var(--navy,#1D3A47)!important;style:none!important}.nav-links a:last-child{border-bottom:none}}
+</style>
+</head>
+<body>
+<nav class="nav">
+<div class="nav-logo"><a href="index.html"><img alt="WSH Wellbeing Social Hub" src="data:image/jpeg;base64,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"/></a></div>
+<div class="nav-links"><a href="index.html#rolunk">Rólunk</a><a href="index.html#csomagok">Vállalati megoldások</a><a href="webinar-index.html">Webinárok</a><a href="blog-index.html">Tudástár</a><a href="partners-index.html">Partnerek</a><a href="index.html#kapcsolat">Kapcsolat</a></div><button class="hamburger" aria-label="Menü megnyitása"><span></span><span></span><span></span></button>
+<a class="nav-cta" href="webinar-7.html">🎯 Következő webinár →</a>
+</nav>
+<div class="doc-hero">
+<h1>Adatvédelmi tájékoztató</h1>
+<p>GDPR – (EU) 2016/679 rendelet szerinti tájékoztató | Hatályos: 2026. március 1.</p>
+</div>
+<div class="doc-body">
+<div class="info-box">
+<p><strong>Adatkezelő adatai:</strong><br/>
+  Cégnév: Wellbeing Social Hub Kft.<br/>
+  Székhely: 2100 Gödöllő, Juhar u. 2.<br/>
+  Adószám: 32753099-2-13<br/>
+  Kapcsolat: <a class="__cf_email__" data-cfemail="caa1a5b0baa5a4be8abdafa6a6a8afa3a4adb9a5a9a3aba6a2bfa8e4a2bf" href="/cdn-cgi/l/email-protection">[email protected]</a> | +36 70 967 8110<br/>
+  Weboldal: wellbeingsocialhub.hu</p>
+</div>
+<h2>1. Bevezetés</h2>
+<p>A Wellbeing Social Hub Kft. (továbbiakban: Adatkezelő) elkötelezett az érintettek személyes adatainak védelme iránt. Jelen tájékoztató az (EU) 2016/679 európai parlamenti és tanácsi rendelet (GDPR) és az információs önrendelkezési jogról és az információszabadságról szóló 2011. évi CXII. törvény (Info tv.) rendelkezéseivel összhangban készült.</p>
+<p>Kérjük, figyelmesen olvassa el ezt a tájékoztatót, mielőtt az oldalunkon regisztrál, webinárra jelentkezik vagy bármilyen más módon személyes adatát megadja.</p>
+<h2>2. Az adatkezelési tevékenységek áttekintése</h2>
+<table>
+<tr><th>Tevékenység</th><th>Adatok köre</th><th>Jogalap</th><th>Megőrzési idő</th></tr>
+<tr><td>Webinár regisztráció</td><td>Név, e-mail, munkahely, beosztás</td><td>Hozzájárulás (GDPR 6. cikk (1) a))</td><td>Az eseményt követő 2 év</td></tr>
+<tr><td>Kapcsolatfelvétel</td><td>Név, e-mail, telefon, üzenet</td><td>Hozzájárulás (GDPR 6. cikk (1) a))</td><td>Ügy lezárásától 1 év</td></tr>
+<tr><td>Tagság / szerződéskötés</td><td>Cégnév, kapcsolattartó neve, e-mail, számlázási adatok</td><td>Szerződés teljesítése (GDPR 6. cikk (1) b))</td><td>Szerződés megszűnésétől 5 év</td></tr>
+<tr><td>Számlázás</td><td>Számlázási név, cím, adószám</td><td>Jogi kötelezettség (GDPR 6. cikk (1) c))</td><td>8 év (számviteli törvény)</td></tr>
+<tr><td>Hírlevél küldés</td><td>Név, e-mail</td><td>Hozzájárulás (GDPR 6. cikk (1) a))</td><td>Leiratkozásig</td></tr>
+<tr><td>Weboldal analitika</td><td>IP-cím (anonimizált), böngésző típusa, látogatási adatok</td><td>Jogos érdek (GDPR 6. cikk (1) f))</td><td>26 hónap</td></tr>
+</table>
+<h2>3. Webinár regisztráció részletesen</h2>
+<p>Amikor webinárra regisztrál, az alábbi adatokat kérjük el:</p>
+<ul>
+<li><strong>Keresztnév, vezetéknév</strong> – a résztvevő azonosításához</li>
+<li><strong>Munkahelyi e-mail cím</strong> – a belépési link és visszaigazolás küldéséhez</li>
+<li><strong>Vállalat neve</strong> – opcionális, statisztikai célból</li>
+<li><strong>Beosztás</strong> – opcionális, a program tematizálásához</li>
+</ul>
+<p>A megadott adatokat a Zoho CRM rendszerünkben tároljuk. Az adatokat kizárólag az esemény szervezéséhez, a belépési link megküldéséhez és az eseményhez kapcsolódó utókövetéshez használjuk. Az adatokat harmadik félnek (kivéve az alábbi adatfeldolgozókat) nem adjuk át.</p>
+<h2>4. Adatfeldolgozók</h2>
+<p>Az Adatkezelő az alábbi adatfeldolgozókat veszi igénybe:</p>
+<table>
+<tr><th>Adatfeldolgozó</th><th>Tevékenység</th><th>Székhely</th></tr>
+<tr><td>Zoho Corporation</td><td>CRM rendszer, e-mail marketing</td><td>USA (SCCs alapján)</td></tr>
+<tr><td>Microsoft Corporation</td><td>Teams webinár platform</td><td>USA (SCCs alapján)</td></tr>
+<tr><td>Forpsi (BlazeArts Kft.)</td><td>Tárhelyszolgáltatás</td><td>Magyarország</td></tr>
+<tr><td>Google LLC</td><td>Analytics, Workspace</td><td>USA (SCCs alapján)</td></tr>
+</table>
+<p>Az EU-n kívüli adattovábbítás minden esetben megfelelő garanciák (standard szerződési feltételek – SCCs) alapján történik, a GDPR 46. cikkének megfelelően.</p>
+<h2>5. Az érintettek jogai</h2>
+<div class="rights-grid">
+<div class="right-item">
+<div class="ri-title">📋 Tájékoztatáshoz való jog</div>
+<p>Joga van tájékoztatást kérni arról, hogy milyen személyes adatait kezeljük.</p>
+</div>
+<div class="right-item">
+<div class="ri-title">✏️ Helyesbítéshez való jog</div>
+<p>Kérheti pontatlan vagy hiányos adatainak helyesbítését.</p>
+</div>
+<div class="right-item">
+<div class="ri-title">🗑️ Törléshez való jog</div>
+<p>Bizonyos esetekben kérheti adatai törlését ("elfeledtetéshez való jog").</p>
+</div>
+<div class="right-item">
+<div class="ri-title">⏸️ Korlátozáshoz való jog</div>
+<p>Kérheti adatai kezelésének korlátozását, pl. pontosság megállapítása idejére.</p>
+</div>
+<div class="right-item">
+<div class="ri-title">📦 Adathordozhatóság joga</div>
+<p>Jogosult az Önről tárolt adatokat géppel olvasható formátumban megkapni.</p>
+</div>
+<div class="right-item">
+<div class="ri-title">🚫 Tiltakozás joga</div>
+<p>Jogos érdeken alapuló adatkezelés esetén tiltakozhat az adatkezelés ellen.</p>
+</div>
+</div>
+<p>Jogait a <strong><a class="__cf_email__" data-cfemail="eb8084919b84859fab9c8e8787898e82858c988488828a87839e89c5839e" href="/cdn-cgi/l/email-protection">[email protected]</a></strong> e-mail címen vagy postai úton (2100 Gödöllő, Juhar u. 2.) gyakorolhatja. A kérelemre 30 napon belül válaszolunk.</p>
+<h2>6. Hozzájárulás visszavonása</h2>
+<p>Ha adatkezelésünk hozzájáruláson alapul, Ön azt bármikor visszavonhatja – ez nem érinti a visszavonás előtti adatkezelés jogszerűségét. Hírlevélről bármikor leiratkozhat az e-mailekben található "Leiratkozás" linkre kattintva.</p>
+<h2>7. Panasztétel</h2>
+<p>Ha úgy véli, adatai kezelése jogszabálysértő, panaszt tehet a Nemzeti Adatvédelmi és Információszabadság Hatóságnál (NAIH):</p>
+<ul>
+<li>Cím: 1055 Budapest, Falk Miksa u. 9–11.</li>
+<li>Telefon: +36 1 391 1400</li>
+<li>E-mail: <a class="__cf_email__" data-cfemail="bfcad8c6d9dad3ccc5d0d3d8ded3decbffd1ded6d791d7ca" href="/cdn-cgi/l/email-protection">[email protected]</a></li>
+<li>Web: naih.hu</li>
+</ul>
+<h2>8. Sütik (cookie-k) használata</h2>
+<p>Weboldalunk az alábbi sütiket használja:</p>
+<table>
+<tr><th>Süti típusa</th><th>Cél</th><th>Megőrzési idő</th></tr>
+<tr><td>Szükséges sütik</td><td>Az oldal működéséhez elengedhetetlen (munkamenet-kezelés)</td><td>Munkamenet végéig</td></tr>
+<tr><td>Analitikai sütik</td><td>Google Analytics – látogatottsági statisztikák (anonimizált)</td><td>26 hónap</td></tr>
+<tr><td>Marketing sütik</td><td>Csak hozzájárulás esetén – remarketing célok</td><td>90 nap</td></tr>
+</table>
+<p>Az analitikai és marketing sütikhez hozzájárulását az oldal első látogatásakor megjelenő cookie-sávban adhatja meg vagy tagadhatja meg. Beállításait bármikor módosíthatja.</p>
+<h2>9. Adatbiztonság</h2>
+<p>Az Adatkezelő megfelelő technikai és szervezési intézkedéseket alkalmaz a személyes adatok védelme érdekében, beleértve:</p>
+<ul>
+<li>SSL/TLS titkosítás a weboldal kommunikációjában</li>
+<li>Jelszóvédett, hozzáférés-kontrollált rendszerek</li>
+<li>Rendszeres biztonsági mentések</li>
+<li>Az adatokhoz való hozzáférés szükségességi alapon korlátozva</li>
+</ul>
+<p>Adatvédelmi incidens esetén a GDPR előírásai szerint 72 órán belül értesítjük a NAIH-ot, és szükség esetén az érintetteket is.</p>
+<h2>10. Tájékoztató módosítása</h2>
+<p>Az Adatkezelő fenntartja a jogot jelen tájékoztató módosítására. A módosításokról az érintetteket e-mailben értesítjük; a folyamatos igénybevétel a módosított tájékoztató elfogadásának minősül.</p>
+<p class="last-updated">Jelen adatvédelmi tájékoztató 2026. március 1-jén lép hatályba.<br/>Wellbeing Social Hub Kft. – 2100 Gödöllő, Juhar u. 2.</p>
+</div>
+<footer>
+<div class="footer-top">
+<div class="footer-brand">
+<div class="footer-logo"><img src="wsh-logo-white.svg" alt="Wellbeing Social Hub"/></div>
+<p>ESG-kompatibilis munkahelyi jólléti ökoszisztéma. Mérhető, riportálható, board-szintű wellbeing stratégia.</p>
+</div>
+<div class="footer-col">
+<h4>Navigáció</h4>
+<a href="index.html#rolunk">Rólunk</a>
+<a href="partners-index.html">Partnerek</a>
+<a href="index.html#csomagok">Mini csomagok</a>
+<a href="webinar-index.html">Webinárok</a>
+<a href="index.html#kapcsolat">Kapcsolat</a>
+<a href="blog-index.html">Tudástár</a>
+</div>
+<div class="footer-col">
+<h4>Partner Stack</h4>
+<a href="https://fitpuli.hu" target="_blank">FitPuli</a>
+<a href="https://cheqbot.com" target="_blank">CHEQ</a>
+<a href="https://stressz-m.hu" target="_blank">Stressz-M</a>
+<a href="https://healthatwork.hu" target="_blank">Health at Work</a>
+<a href="https://galeriaoptika.hu/ceges-szemvizsgalat/" target="_blank">Galéria Optika</a>
+</div>
+<div class="footer-col">
+<h4>Jogi</h4>
+<a href="adatvedelmi.html">Adatkezelési tájékoztató</a>
+<a href="aszf.html">ÁSZF</a>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2026 Wellbeing Social Hub Kft. · Minden jog fenntartva · wellbeingsocialhub.hu</p>
+<div>
+<a href="adatvedelmi.html">Adatvédelem</a>
+<a href="aszf.html">ÁSZF</a>
+</div>
+</div>
+</footer><script>
+(function(){
+  var b=document.querySelector('.hamburger'),m=document.querySelector('.nav-links');
+  if(!b||!m)return;
+  b.addEventListener('click',function(e){
+    e.stopPropagation();
+    b.classList.toggle('open');
+    m.classList.toggle('open');
+    b.setAttribute('aria-label',m.classList.contains('open')?'Menü bezárása':'Menü megnyitása');
+  });
+  document.addEventListener('click',function(e){
+    if(!m.contains(e.target)&&!b.contains(e.target)){b.classList.remove('open');m.classList.remove('open');}
+  });
+  m.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){b.classList.remove('open');m.classList.remove('open');});
+  });
+})();
+</script>
+</body></html>

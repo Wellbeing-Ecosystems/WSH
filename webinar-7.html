@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>WSH Webinár – Mini Wellbeing Programok a 2026-os Foci VB-re | 2026.05.20.</title>
+<meta name="description" content="Mini Wellbeing programok a 2026-os Foci VB-re: közösségépítés, motiváció, employer branding és ESG-kompatibilis vállalati aktivitások KKV-k és nagyvállalatok számára." />
+
+<!-- ═══════════════════════════════════════════════════════
+     OPEN GRAPH – ZOHO Campaign / social share
+     Share kép: Google Drive feltöltés
+═══════════════════════════════════════════════════════ -->
+<meta property="og:type"        content="website" />
+<meta property="og:locale"      content="hu_HU" />
+<meta property="og:site_name"   content="Wellbeing Social Hub" />
+<meta property="og:url"         content="https://www.wellbeingsocialhub.hu/webinar-7" />
+<meta property="og:title"       content="⚽ Mini Wellbeing Programok a 2026-os Foci VB-re – WSH Webinár | 2026.05.20." />
+<meta property="og:description" content="Hogyan építs közösséget, motivációt és employer brandinget ESG-kompatibilisan? Ingyenes online webinár · 2026. május 20. · 13:00–14:00 · Microsoft Teams" />
+<!-- Google Drive share kép → közvetlen embed URL -->
+<meta property="og:image"       content="https://www.wellbeingsocialhub.hu/webina-7-share.png" />
+<meta property="og:image:width"  content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card"        content="summary_large_image" />
+<meta name="twitter:image"       content="https://www.wellbeingsocialhub.hu/webina-7-share.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Nunito+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --teal:#00c4a7; --teal2:#33d2bd; --teal-dark:#244c5a; --navy:#254e5c;
+  --ink:#153f36; --muted:#5d6669; --bg:#f5fbfa; --line:#d7efeb; --white:#fff;
+  --gold:#f4b84a; --purple:#7c5cbf;
+}
+*{box-sizing:border-box;margin:0;padding:0} html{scroll-behavior:smooth}
+body{font-family:'Nunito Sans',sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Nunito',sans-serif;line-height:1.12} a{color:inherit}
+
+/* ── NAV ──────────────────────────────────────────────── */
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);border-bottom:2px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:16px 56px;box-shadow:0 4px 24px rgba(0,196,167,.08)}
+.logo{font-family:'Nunito',sans-serif;font-weight:900;font-size:28px;color:var(--teal);text-decoration:none;letter-spacing:-1px;display:flex;align-items:center;gap:14px}
+.logo span{color:var(--ink);font-size:14px;font-weight:800;border-left:3px solid var(--teal);padding-left:14px;letter-spacing:.3px}
+.nav-links{display:flex;gap:24px;align-items:center}
+.nav-links a{text-decoration:none;font-family:'Nunito';font-size:14px;font-weight:800;color:var(--navy);transition:.15s}
+.nav-links a:hover{color:var(--teal)}
+.nav-cta{background:var(--teal);color:white!important;text-decoration:none;padding:11px 24px;border-radius:999px;font-weight:900;box-shadow:0 10px 28px rgba(0,196,167,.28);transition:.2s!important}
+.nav-cta:hover{transform:translateY(-2px);background:#00ad94!important}
+
+/* ── COUNTDOWN BANNER ────────────────────────────────── */
+.countdown-bar{
+  background:linear-gradient(90deg,#0f3a2e,var(--navy));
+  color:#fff;padding:12px 56px;
+  display:flex;align-items:center;justify-content:center;gap:28px;flex-wrap:wrap;
+}
+.cd-label{font-size:12px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.6);margin-right:6px}
+.cd-units{display:flex;gap:10px;align-items:center}
+.cd-box{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:6px 12px;text-align:center;min-width:56px}
+.cd-num{font-family:'Nunito',sans-serif;font-size:22px;font-weight:900;line-height:1;color:#6ff0dd}
+.cd-unit{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.5)}
+.cd-sep{font-size:20px;font-weight:900;color:rgba(255,255,255,.3);margin-top:-4px}
+.cd-live{display:none;background:#e74c3c;color:#fff;padding:8px 22px;border-radius:999px;font-weight:900;font-size:14px;animation:pulse 1.2s ease infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.65}}
+
+/* ── HERO ─────────────────────────────────────────────── */
+.hero{background:linear-gradient(135deg,var(--navy) 0%,#1e3e49 58%,#17333d 100%);color:white;padding:74px 56px 46px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;right:-180px;top:-140px;width:620px;height:620px;border-radius:50%;background:radial-gradient(circle,rgba(0,196,167,.18),rgba(0,196,167,0) 68%)}
+.hero:after{content:"⚽";position:absolute;right:8%;bottom:8%;font-size:210px;opacity:.05;filter:grayscale(1)}
+.hero-inner{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:1.05fr .95fr;gap:58px;align-items:center;position:relative;z-index:2}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;background:rgba(0,196,167,.14);border:1px solid rgba(0,196,167,.36);color:#6ff0dd;padding:8px 18px;border-radius:999px;font-weight:900;font-size:12px;letter-spacing:1px;text-transform:uppercase;margin-bottom:26px}
+.eyebrow:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--teal)}
+h1{font-size:clamp(36px,4.8vw,62px);font-weight:900;letter-spacing:-1.5px;margin-bottom:18px}
+h1 em{font-style:normal;color:var(--teal)}
+.subtitle{font-size:clamp(18px,2vw,26px);font-weight:800;color:#b9fff4;margin-bottom:18px}
+.lead{font-size:16px;color:rgba(255,255,255,.72);max-width:640px;margin-bottom:30px}
+.cta-row{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:34px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 30px;border-radius:999px;text-decoration:none;font-family:'Nunito';font-weight:900;transition:.2s;border:none;cursor:pointer;font-size:15px}
+.btn-primary{background:var(--teal);color:white;box-shadow:0 12px 34px rgba(0,196,167,.34)}
+.btn-primary:hover{transform:translateY(-2px);background:#00ad94}
+.btn-secondary{border:1.5px solid rgba(255,255,255,.22);color:white;background:rgba(255,255,255,.06)}
+.btn-secondary:hover{background:rgba(255,255,255,.12)}
+.meta{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.meta-item{background:rgba(255,255,255,.065);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:18px}
+.meta-label{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,.45);font-weight:800}
+.meta-value{font-family:'Nunito';font-weight:900;font-size:16px;color:white}
+.meta-sub{font-size:13px;color:rgba(255,255,255,.6)}
+
+/* Hero kártya / kép */
+.hero-card{background:white;border:3px solid var(--teal2);border-radius:26px;padding:12px;box-shadow:0 26px 80px rgba(0,0,0,.28);transform:rotate(.3deg)}
+.hero-card img{display:block;width:100%;border-radius:18px;object-fit:cover;max-height:380px}
+.hero-note{margin-top:12px;color:var(--ink);font-weight:900;text-align:center;font-family:'Nunito';font-size:13px}
+
+/* ── STRIP ───────────────────────────────────────────── */
+.strip{background:var(--teal2);padding:16px 56px;color:white;font-family:'Nunito';font-weight:900;text-transform:uppercase;letter-spacing:.8px;text-align:center;font-size:14px}
+.strip span{opacity:.96;margin:0 10px}
+
+/* ── SECTIONS ─────────────────────────────────────────── */
+.section{padding:80px 56px}
+.wrap{max-width:1180px;margin:0 auto}
+.section-head{max-width:760px;margin-bottom:42px}
+.kicker{font-family:'Nunito';font-weight:900;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--teal);margin-bottom:12px}
+.title{font-size:clamp(26px,3.4vw,44px);font-weight:900;color:var(--navy);letter-spacing:-.6px;margin-bottom:14px}
+.desc{font-size:16px;color:var(--muted)}
+
+/* ── PROBLEM CARDS ────────────────────────────────────── */
+.problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.problem-card{background:white;border:2px solid var(--line);border-radius:24px;padding:30px;box-shadow:0 12px 38px rgba(36,76,90,.06)}
+.problem-icon{font-size:38px;margin-bottom:12px}
+.problem-card h3{font-size:21px;color:var(--navy);margin-bottom:10px}
+.problem-card p{color:var(--muted);font-size:15px}
+
+/* ── PACKAGES ─────────────────────────────────────────── */
+.packages{background:white}
+.package-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.package{border:2px solid var(--line);border-radius:26px;overflow:hidden;background:var(--bg);box-shadow:0 16px 48px rgba(36,76,90,.08)}
+.package.featured{border-color:var(--teal);transform:translateY(-8px)}
+.package-top{background:var(--navy);color:white;padding:24px}
+.package.featured .package-top{background:linear-gradient(135deg,var(--teal),#00a990)}
+.package-top small{font-weight:900;text-transform:uppercase;letter-spacing:1.2px;opacity:.75;font-size:11px}
+.package-top h3{font-size:25px;margin:5px 0}
+.price{font-size:22px;font-weight:900}
+.package-body{padding:26px}
+.package-body ul{list-style:none;display:grid;gap:12px}
+.package-body li{display:flex;gap:10px;color:var(--muted);font-size:15px}
+.package-body li:before{content:"✓";color:var(--teal);font-weight:900;flex-shrink:0}
+.badge-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
+.badge{background:white;border:1px solid var(--line);border-radius:999px;padding:6px 10px;color:var(--navy);font-size:12px;font-weight:900}
+
+/* ── AGENDA ───────────────────────────────────────────── */
+.agenda-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.agenda-card{background:white;border:2px solid var(--line);border-radius:22px;padding:26px;position:relative;overflow:hidden}
+.agenda-card:before{content:"";position:absolute;left:0;top:0;right:0;height:5px;background:var(--teal)}
+.agenda-card h3{font-size:21px;color:var(--navy);margin:8px 0}
+.agenda-card p{color:var(--muted);font-size:15px}
+.tag{display:inline-block;background:#e7fbf7;color:#008f7b;border-radius:999px;padding:5px 12px;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.6px}
+
+/* ── SPEAKERS ─────────────────────────────────────────── */
+.speakers{background:linear-gradient(135deg,#18333d,#254e5c);color:white}
+.speakers .title{color:white}
+.speakers .desc{color:rgba(255,255,255,.62)}
+.speaker-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.speaker{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:26px;overflow:hidden;transition:.2s}
+.speaker:hover{transform:translateY(-4px);border-color:rgba(0,196,167,.55)}
+.speaker-img-wrap{width:100%;aspect-ratio:1/1;overflow:hidden;background:rgba(255,255,255,.04)}
+.speaker-img-wrap img{width:100%;height:100%;display:block;object-fit:cover;object-position:top center}
+/* Placeholder ha nincs kép */
+.speaker-placeholder{width:100%;aspect-ratio:1/1;background:linear-gradient(135deg,rgba(0,196,167,.2),rgba(36,76,90,.4));display:flex;align-items:center;justify-content:center;font-size:72px}
+.speaker-body{padding:24px}
+.speaker h3{font-size:23px;margin-bottom:6px}
+.speaker-role{color:#80f6e5;font-weight:800;line-height:1.35;margin-bottom:12px;font-size:14px}
+.speaker p{font-size:14px;color:rgba(255,255,255,.62)}
+
+/* ── ESG ──────────────────────────────────────────────── */
+.esg-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.esg-card{background:white;border:2px solid var(--line);border-radius:24px;padding:30px}
+.esg-card h3{font-size:23px;color:var(--navy);margin-bottom:14px}
+.esg-list{list-style:none;display:grid;gap:12px}
+.esg-list li{display:flex;gap:10px;color:var(--muted);font-size:15px}
+.esg-list li:before{content:"●";color:var(--teal);flex-shrink:0}
+
+/* ── REGISTRATION ─────────────────────────────────────── */
+.reg{background:var(--navy);color:white}
+.reg-box{display:grid;grid-template-columns:1fr 1.1fr;gap:46px;align-items:start;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.14);border-radius:30px;padding:44px}
+.reg .title{color:white}
+.reg .desc{color:rgba(255,255,255,.64)}
+.reg .cta-row{margin-top:28px}
+
+/* ZOHO form wrapper */
+.zoho-form-wrap{background:white;border-radius:24px;overflow:hidden;box-shadow:0 20px 64px rgba(0,0,0,.2);border:3px solid var(--teal2)}
+.zoho-form-wrap iframe{display:block;width:100%!important;border:none!important}
+
+
+
+/* ── SHARE SZEKCIÓ ────────────────────────────────────── */
+.share-section{background:var(--bg);border-top:2px solid var(--line);padding:32px 56px;text-align:center}
+.share-inner{max-width:600px;margin:0 auto}
+.share-label{font-family:'Nunito';font-weight:900;font-size:14px;color:var(--navy);margin-bottom:14px}
+.share-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.share-btn{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:999px;font-family:'Nunito';font-weight:900;font-size:13px;text-decoration:none;transition:.2s;border:2px solid var(--line);color:var(--navy);background:white}
+.share-btn:hover{border-color:var(--teal);color:var(--teal);transform:translateY(-1px)}
+.share-btn.fb{border-color:#1877f2;color:#1877f2}
+.share-btn.li{border-color:#0a66c2;color:#0a66c2}
+.share-btn.tw{border-color:#000;color:#000}
+
+/* ── FOOTER ───────────────────────────────────────────── */
+.footer{background:#0f252d;color:rgba(255,255,255,.55);padding:28px 56px;text-align:center;font-size:14px}
+.footer a{color:rgba(255,255,255,.85)}
+
+/* ── HERO COUNTDOWN (kép alatt) ─────────────────────── */
+.hero-countdown{
+  max-width:1240px;margin:28px auto 0;
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:18px;
+  padding:18px 28px;
+  display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;
+  position:relative;z-index:2;
+}
+.hcd-label{font-size:12px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.55)}
+.hcd-units{display:flex;gap:8px;align-items:center}
+.hcd-box{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:10px;padding:8px 14px;text-align:center;min-width:60px}
+.hcd-num{font-family:'Nunito',sans-serif;font-size:26px;font-weight:900;line-height:1;color:#6ff0dd}
+.hcd-unit{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.45)}
+.hcd-sep{font-size:22px;font-weight:900;color:rgba(255,255,255,.25);margin-top:-4px}
+.hcd-live{display:none;background:#e74c3c;color:#fff;padding:8px 22px;border-radius:999px;font-weight:900;font-size:14px;animation:pulse 1.2s ease infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.65}}
+@media(max-width:960px){
+  .nav{padding:14px 22px}
+  .nav-links{display:none}
+  .hero,.section,.share-section{padding-left:22px;padding-right:22px}
+  .hero-countdown{margin:20px 22px 0;padding:14px 18px;gap:12px}
+  .hero-inner,.reg-box,.esg-grid{grid-template-columns:1fr}
+  .meta,.problem-grid,.package-grid,.speaker-grid,.agenda-grid{grid-template-columns:1fr}
+  .package.featured{transform:none}
+  .strip{padding:14px 22px}
+  .hero{padding-top:48px;padding-bottom:36px}
+  .hcd-units{gap:5px}
+  .hcd-box{min-width:48px;padding:6px 10px}
+  .hcd-num{font-size:20px}
+}
+
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none;flex-shrink:0}
+.hamburger span{display:block;width:22px;height:2px;background:var(--navy,#1D3A47);border-radius:2px;transition:transform .3s,opacity .3s}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.open span:nth-child(2){opacity:0;transform:translateX(-8px)}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+@media(max-width:900px){.nav{flex-wrap:wrap;padding:12px 20px;gap:8px}.nav-logo{flex:1}.nav-logo img{height:36px}.logo{flex:1;font-size:14px}.hamburger{display:flex;order:5}.nav-cta{order:4;font-size:12px;padding:7px 14px;white-space:nowrap}.nav-links{display:none!important;width:100%;order:10;flex-direction:column;padding:8px 0 4px;gap:0;border-top:1px solid var(--teal-mid,#C8EDE9);margin-top:4px}.nav-links.open{display:flex!important}.nav-links a{padding:13px 0;border-bottom:1px solid var(--border,#D9ECEA);font-size:15px;width:100%;color:var(--navy,#1D3A47)!important;style:none!important}.nav-links a:last-child{border-bottom:none}}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:36px}
+.footer-brand p{font-size:14px;color:rgba(255,255,255,.45);line-height:1.6;margin-top:14px;max-width:280px}
+.footer-col h4{font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;color:white;letter-spacing:.5px;margin-bottom:14px;text-transform:uppercase}
+.footer-col a{display:block;font-size:13px;color:rgba(255,255,255,.45);text-decoration:none;margin-bottom:8px;transition:color .2s}
+.footer-col a:hover{color:var(--teal,#3BBFAD)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-bottom p{font-size:12px;color:rgba(255,255,255,.3)}
+.footer-bottom a{font-size:12px;color:rgba(255,255,255,.3);text-decoration:none;margin-left:16px}
+.footer-bottom a:hover{color:var(--teal,#3BBFAD)}
+.footer-logo-rich img{height:42px;width:auto}
+@media(max-width:900px){.footer-top{grid-template-columns:1fr 1fr;gap:28px}.footer-bottom{flex-direction:column;text-align:center}}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════ NAV – főoldal menüje ══════════════ -->
+<nav class="nav">
+  <a class="logo" href="https://www.wellbeingsocialhub.hu/"><img src="wsh-logo-original.svg" alt="Wellbeing Social Hub" style="height:40px;width:auto;display:block"></a>
+  <div class="nav-links">
+    <a href="https://www.wellbeingsocialhub.hu/#rolunk">Rólunk</a>
+    <a href="https://www.wellbeingsocialhub.hu/#csomagok">Vállalati megoldások</a>
+    <a href="https://www.wellbeingsocialhub.hu/webinar-index.html">Webinárok</a>
+    <a href="https://www.wellbeingsocialhub.hu/blog-index.html">Tudástár</a>
+    <a href="https://www.wellbeingsocialhub.hu/partners-index.html">Partnerek</a>
+    <a href="https://www.wellbeingsocialhub.hu/#kapcsolat">Kapcsolat</a>
+  </div>
+  <button class="hamburger" aria-label="Menü megnyitása"><span></span><span></span><span></span></button>
+  <a class="nav-cta" href="https://events.teams.microsoft.com/event/b90e952e-95db-463a-a6ab-69cc57e9a444@7f61433d-150e-41dd-b171-14965cbca815/registration" target="_blank" rel="noopener">Regisztrálok →</a>
+</nav>
+
+
+<!-- ═══════════════ HERO ══════════════════════════════ -->
+<header class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="eyebrow">WSH Webinár #7 · 2026.05.20. · 13:00–14:00</div>
+      <h1>⚽ Mini <em>Wellbeing Programok</em> a 2026-os Foci VB-re</h1>
+      <p class="subtitle">Hogyan építs közösséget, motivációt és employer brandinget ESG-kompatibilisan?</p>
+      <p class="lead">A 2026-os Foci VB csak az apropó. A valódi lehetőség: mérhető, élményalapú munkavállalói bevonás, közösségépítés és vállalati wellbeing-program, amely KKV és nagyvállalati környezetben is gyorsan elindítható.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://events.teams.microsoft.com/event/b90e952e-95db-463a-a6ab-69cc57e9a444@7f61433d-150e-41dd-b171-14965cbca815/registration" target="_blank" rel="noopener">Foglalom a helyem – ingyenes</a>
+        <a class="btn btn-secondary" href="#csomagok">Megnézem a csomagokat</a>
+      </div>
+      <div class="meta">
+        <div class="meta-item">
+          <div class="meta-label">Időpont</div>
+          <div class="meta-value">2026.05.20.</div>
+          <div class="meta-sub">13:00–14:00</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Platform</div>
+          <div class="meta-value">Microsoft Teams</div>
+          <div class="meta-sub">Online · ingyenes</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Részvétel</div>
+          <div class="meta-value">Ingyenes</div>
+          <div class="meta-sub">Regisztráció szükséges</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero kép – Google Drive közvetlen link -->
+    <div class="hero-card">
+      <img
+        src="https://lh3.googleusercontent.com/d/1supL8QEKfSISieAF8f8Prl2hgot_vyRn=w800"
+        alt="Mini Wellbeing Programok a 2026-os Foci VB-re – WSH Webinár előadók"
+        loading="eager"
+        onerror="this.src='https://drive.google.com/thumbnail?id=1supL8QEKfSISieAF8f8Prl2hgot_vyRn&sz=w800'"
+      />
+      <div class="hero-note">Wellbeing Social Hub • céges megoldások • gyakorlati tapasztalatok</div>
+    </div>
+  </div>
+
+  <!-- ── VISSZASZÁMLÁLÓ – hero kép alatt ──────────────── -->
+  <div class="hero-countdown">
+    <div class="hcd-label">⏳ Visszaszámláló az eseményig</div>
+    <div class="hcd-units" id="cdUnits">
+      <div class="hcd-box"><div class="hcd-num" id="cd-d">--</div><div class="hcd-unit">nap</div></div>
+      <span class="hcd-sep">:</span>
+      <div class="hcd-box"><div class="hcd-num" id="cd-h">--</div><div class="hcd-unit">óra</div></div>
+      <span class="hcd-sep">:</span>
+      <div class="hcd-box"><div class="hcd-num" id="cd-m">--</div><div class="hcd-unit">perc</div></div>
+      <span class="hcd-sep">:</span>
+      <div class="hcd-box"><div class="hcd-num" id="cd-s">--</div><div class="hcd-unit">mp</div></div>
+    </div>
+    <div class="hcd-live" id="cdLive">🔴 A webinár most ÉLŐBEN zajlik – Csatlakozz!</div>
+  </div>
+
+</header>
+
+<div class="strip">
+  <span>Wellbeing Social Hub</span> •
+  <span>Céges megoldások</span> •
+  <span>Gyakorlati tapasztalatok</span> •
+  <span>ESG-kompatibilis vállalati jóllét</span>
+</div>
+
+<!-- ═══════════════ MIÉRT AKTUÁLIS ════════════════════ -->
+<section class="section" id="miert">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">A lehetőség</div>
+      <h2 class="title">A VB-láz önmagában zaj. Jól felépítve: közösségi energia.</h2>
+      <p class="desc">A cél nem az, hogy „focis programot" adjunk el. Hanem hogy egy globális esemény köré építve legyen belőle engagement, csapatkohézió, egészségtudatos aktivitás és ESG-kompatibilis bizonyíték.</p>
+    </div>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="problem-icon">🤝</div>
+        <h3>Közösségépítés</h3>
+        <p>A VB közös beszédtéma. Ebből szervezett, bevonó, könnyen kommunikálható vállalati aktivitás építhető.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">📈</div>
+        <h3>Motiváció &amp; engagement</h3>
+        <p>A CHEQ tippjáték, FitPuli/TeamPuli kihívások és edukációs elemek mérhető részvételt adnak.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">📊</div>
+        <h3>ESG-kompatibilitás</h3>
+        <p>A program dokumentálható: bevonás, képzés, egészség és biztonság, munkavállalói jóllét.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ PROGRAM / AGENDA ═════════════════ -->
+<section class="section" id="program">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Webinár program</div>
+      <h2 class="title">60 perc, ami segít eldönteni: hogyan legyen a VB-ből vállalati wellbeing-program?</h2>
+      <p class="desc">Gyakorlati, megoldásbemutató fókuszú webinár HR, cégvezetői, compensation &amp; benefits és ESG nézőpontból.</p>
+    </div>
+    <div class="agenda-grid">
+      <div class="agenda-card">
+        <span class="tag">1. blokk</span>
+        <h3>A te csapatod is bajnok lehet?</h3>
+        <p>Hogyan lehet egy sporteseményből dolgozói élmény, közösségi aktivitás és belső kommunikációs kampány?</p>
+      </div>
+      <div class="agenda-card">
+        <span class="tag">2. blokk</span>
+        <h3>Közösségépítés egészségtudatosan</h3>
+        <p>FitPuli és TeamPuli szemlélet: szokásépítés, aktivitás, gamifikáció és mérhető részvétel.</p>
+      </div>
+      <div class="agenda-card">
+        <span class="tag">3. blokk</span>
+        <h3>CHEQ VB 2026 Tippjáték</h3>
+        <p>Közösségi tabella, progresszív pontozás, célzott üzenetek és nulla IT-terhelés.</p>
+      </div>
+      <div class="agenda-card">
+        <span class="tag">4. blokk</span>
+        <h3>Stresszmentes együttműködés a munkahelyen</h3>
+        <p>Hogyan kapcsolódik a közösségi élmény a pszichoszociális kockázatkezeléshez és a szervezeti működéshez?</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ ELŐADÓK ════════════════════════════ -->
+<section class="section speakers" id="eloadok">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Előadók</div>
+      <h2 class="title">Gyakorlati szereplők, vállalati megoldások</h2>
+      <p class="desc">A fókusz: hogyan lehet a Mini Wellbeing csomagokat valós vállalati környezetben elindítani, kommunikálni és mérhetővé tenni.</p>
+    </div>
+    <div class="speaker-grid">
+
+      <!-- Csuti Blanka – Google Drive kép -->
+      <div class="speaker">
+        <div class="speaker-img-wrap">
+          <img
+            src="https://lh3.googleusercontent.com/d/1Kw7ft3UoveEd8izSEV7oj424ZTVPOBSf=w600"
+            alt="Csuti Blanka"
+            loading="lazy"
+            onerror="this.src='https://drive.google.com/thumbnail?id=1Kw7ft3UoveEd8izSEV7oj424ZTVPOBSf&sz=w600'"
+          />
+        </div>
+        <div class="speaker-body">
+          <h3>Csuti Blanka</h3>
+          <div class="speaker-role">Customer Success Manager · CHEQ</div>
+          <p>CHEQ VB 2026 Tippjáték: közösségi bevonás, céges rangsor, kommunikáció és játékos motiváció.</p>
+        </div>
+      </div>
+
+      <!-- Dr. Oláh Dániel – Google Drive kép -->
+      <div class="speaker">
+        <div class="speaker-img-wrap">
+          <img
+            src="https://lh3.googleusercontent.com/d/1vOKahICU3ys28ri6Im356qwA5wD8I8J_=w600"
+            alt="Dr. Oláh Dániel"
+            loading="lazy"
+            onerror="this.src='https://drive.google.com/thumbnail?id=1vOKahICU3ys28ri6Im356qwA5wD8I8J_&sz=w600'"
+          />
+        </div>
+        <div class="speaker-body">
+          <h3>Dr. Oláh Dániel M.sc.</h3>
+          <div class="speaker-role">FitPuli Co-Founder &amp; CEO · foglalkozás-egészségügyi orvos</div>
+          <p>Közösségépítés egészségtudatosan: Egészségtérkép, FitPuli, TeamPuli és szokásépítés.</p>
+        </div>
+      </div>
+
+      <!-- Faragó István – Google Drive kép -->
+      <div class="speaker">
+        <div class="speaker-img-wrap">
+          <img
+            src="https://lh3.googleusercontent.com/d/1GkagkpSuiWNE3xTgCSgf5d9AWlQU023p=w600"
+            alt="Faragó István"
+            loading="lazy"
+            onerror="this.src='https://drive.google.com/thumbnail?id=1GkagkpSuiWNE3xTgCSgf5d9AWlQU023p&sz=w600'"
+          />
+        </div>
+        <div class="speaker-body">
+          <h3>Faragó István</h3>
+          <div class="speaker-role">Stressz-M tulajdonos · WSH alapító · szakmai moderátor</div>
+          <p>Stresszmentes együttműködés, ESG-kompatibilis wellbeing-logika és vállalati implementáció.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ CSOMAGOK (előadók után) ═══════════ -->
+<section class="section packages" id="csomagok">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">WSH Mini Wellbeing csomagok</div>
+      <h2 class="title">Három belépési szint – alacsony kockázat, mérhető hatás</h2>
+      <p class="desc">A csomagok célja, hogy a vállalatok gyorsan, pilot jelleggel, mégis szakmailag és ESG-szempontból strukturáltan tudjanak elindulni.</p>
+    </div>
+    <div class="package-grid">
+      <div class="package">
+        <div class="package-top">
+          <small>Belépési szint</small>
+          <h3>Alap csomag</h3>
+          <div class="price">970 000 Ft + ÁFA</div>
+        </div>
+        <div class="package-body">
+          <ul>
+            <li>30 fő részére</li>
+            <li>Állapotfelmérés és Egészségtérkép</li>
+            <li>Stressz-M pszichoszociális kockázatelemzés</li>
+            <li>FitPuli + TeamPuli digitális program</li>
+            <li>2–3 előadás + mini stratégia</li>
+            <li>Visszamérés</li>
+          </ul>
+          <div class="badge-row">
+            <span class="badge">S1-14</span><span class="badge">S1-2</span><span class="badge">S1-1</span>
+          </div>
+        </div>
+      </div>
+      <div class="package featured">
+        <div class="package-top">
+          <small>Ajánlott · VB fókusz</small>
+          <h3>Fejlesztői csomag</h3>
+          <div class="price">1 670 000 Ft + ÁFA</div>
+        </div>
+        <div class="package-body">
+          <ul>
+            <li>50 fő + ESG adatgyűjtés</li>
+            <li>Stressz-M felmérés</li>
+            <li>FitPuli / TeamPuli egészségprogram</li>
+            <li>CHEQ VB 2026 Tippjáték max. 250 főig</li>
+            <li>3–4 előadás + workshop</li>
+            <li>ESG-kompatibilis visszamérés</li>
+          </ul>
+          <div class="badge-row">
+            <span class="badge">S1-14</span><span class="badge">S1-13</span><span class="badge">S1-4</span>
+          </div>
+        </div>
+      </div>
+      <div class="package">
+        <div class="package-top">
+          <small>Teljes program</small>
+          <h3>Premium csomag</h3>
+          <div class="price">2 870 000 Ft + ÁFA</div>
+        </div>
+        <div class="package-body">
+          <ul>
+            <li>50–100 fő · 3–6 hónap</li>
+            <li>HR–HSE–L&amp;D irányítócsoport</li>
+            <li>Egészségtérkép + Stressz-M teljes ciklus</li>
+            <li>CHEQ kampány + FitPuli / TeamPuli</li>
+            <li>5–6 előadás + workshop sorozat</li>
+            <li>Időszakos ESG riport</li>
+          </ul>
+          <div class="badge-row">
+            <span class="badge">S1-1–S1-5</span><span class="badge">S1-14</span><span class="badge">S1-13</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ ESG ════════════════════════════════ -->
+<section class="section" id="esg">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">ESG-kompatibilis szemlélet</div>
+      <h2 class="title">Nem csak aktivitás. Dokumentálható vállalati jóllét.</h2>
+      <p class="desc">A Mini Wellbeing csomagok úgy épülnek fel, hogy a részvétel, képzés, egészség és pszichoszociális kockázatkezelés vállalati szinten is értelmezhető legyen.</p>
+    </div>
+    <div class="esg-grid">
+      <div class="esg-card">
+        <h3>Mit ad a HR-nek?</h3>
+        <ul class="esg-list">
+          <li>Kész, könnyen kommunikálható belső program</li>
+          <li>Önkéntes részvételre építő bevonás</li>
+          <li>Employer branding tartalom és közösségi élmény</li>
+          <li>Visszamérhető programlogika</li>
+        </ul>
+      </div>
+      <div class="esg-card">
+        <h3>Mit ad a vezetésnek?</h3>
+        <ul class="esg-list">
+          <li>Alacsony belépési kockázatú pilot</li>
+          <li>Mérhető részvételi és wellbeing adatok</li>
+          <li>ESRS S1 logikához illeszthető dokumentáció</li>
+          <li>Később skálázható éves wellbeing együttműködés</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ REGISZTRÁCIÓ ══════════════════════ -->
+<section class="section reg" id="regisztracio">
+  <div class="wrap">
+    <div class="reg-box" style="grid-template-columns:1fr;max-width:680px;margin:0 auto;text-align:center;">
+
+      <div>
+        <div class="kicker">Regisztráció</div>
+        <h2 class="title">Foglalj helyet a webinárra</h2>
+        <p class="desc" style="margin:0 auto 2rem;">A részvétel ingyenes, de regisztrációhoz kötött. A Microsoft Teams eseményen való regisztráció után e-mailben megkapod a csatlakozási linket.</p>
+
+        <ul style="list-style:none;display:grid;gap:10px;max-width:400px;margin:0 auto 2.5rem;text-align:left;">
+          <li style="display:flex;gap:10px;color:rgba(255,255,255,.8);font-size:15px"><span style="color:var(--teal);font-weight:900">✓</span> 100% ingyenes részvétel</li>
+          <li style="display:flex;gap:10px;color:rgba(255,255,255,.8);font-size:15px"><span style="color:var(--teal);font-weight:900">✓</span> Diasor &amp; felvétel e-mailben</li>
+          <li style="display:flex;gap:10px;color:rgba(255,255,255,.8);font-size:15px"><span style="color:var(--teal);font-weight:900">✓</span> Interaktív Q&amp;A az előadókkal</li>
+          <li style="display:flex;gap:10px;color:rgba(255,255,255,.8);font-size:15px"><span style="color:var(--teal);font-weight:900">✓</span> ESG &amp; HR szakmai hálózat</li>
+        </ul>
+
+        <!-- Teams regisztráció gomb -->
+        <a
+          class="btn btn-primary"
+          href="https://events.teams.microsoft.com/event/b90e952e-95db-463a-a6ab-69cc57e9a444@7f61433d-150e-41dd-b171-14965cbca815/registration"
+          target="_blank"
+          rel="noopener"
+          style="font-size:18px;padding:20px 48px;display:inline-flex;align-items:center;gap:12px;box-shadow:0 8px 32px rgba(0,196,167,.4);">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 10l5 5-5 5"/><path d="M4 4v7a4 4 0 0 0 4 4h12"/></svg>
+          Foglalom a helyem
+        </a>
+
+        <p style="margin-top:1.2rem;font-size:13px;color:rgba(255,255,255,.4);">
+          📅 2026. május 20. · 13:00–14:00 · Microsoft Teams · Ingyenes
+        </p>
+        <p style="margin-top:.5rem;font-size:12px;color:rgba(255,255,255,.3);">
+          A gombra kattintva a Microsoft Teams regisztrációs oldalára kerülsz.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ SOCIAL SHARE ═════════════════════ -->
+<div class="share-section">
+  <div class="share-inner">
+    <div class="share-label">⚽ Oszd meg ezt a webinárt kollégáiddal!</div>
+    <div class="share-btns">
+      <a class="share-btn li" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.wellbeingsocialhub.hu%2Fwebinar-7" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+      <a class="share-btn fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.wellbeingsocialhub.hu%2Fwebinar-7" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        Facebook
+      </a>
+      <a class="share-btn tw" href="https://twitter.com/intent/tweet?text=%E2%9A%BD+Mini+Wellbeing+Programok+a+2026-os+Foci+VB-re+%E2%80%93+ingyenes+WSH+Webin%C3%A1r+%7C+2026.05.20.+13%3A00&url=https%3A%2F%2Fwww.wellbeingsocialhub.hu%2Fwebinar-7" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        X (Twitter)
+      </a>
+      <a class="share-btn" href="mailto:?subject=⚽ WSH Webinár – Mini Wellbeing Programok a 2026-os Foci VB-re&body=Ajánlom ezt az ingyenes webinárt:%0A%0Ahttps://www.wellbeingsocialhub.hu/webinar-7%0A%0A2026. május 20. · 13:00–14:00 · Microsoft Teams · Ingyenes">
+        ✉️ E-mailben küldöm
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer" style="padding:50px 56px 30px;text-align:left;">
+<div class="footer-top">
+<div class="footer-brand">
+<div class="footer-logo-rich"><img src="wsh-logo-white.svg" alt="Wellbeing Social Hub"/></div>
+<p style="font-size:14px;color:rgba(255,255,255,.45);line-height:1.6;margin-top:14px;max-width:280px">ESG-kompatibilis munkahelyi jólléti ökoszisztéma. Mérhető, riportálható, board-szintű wellbeing stratégia.</p>
+</div>
+<div class="footer-col">
+<h4>Navigáció</h4>
+<a href="https://www.wellbeingsocialhub.hu/#rolunk">Rólunk</a>
+<a href="https://www.wellbeingsocialhub.hu/partners-index.html">Partnerek</a>
+<a href="https://www.wellbeingsocialhub.hu/#csomagok">Mini csomagok</a>
+<a href="https://www.wellbeingsocialhub.hu/webinar-index.html">Webinárok</a>
+<a href="https://www.wellbeingsocialhub.hu/#kapcsolat">Kapcsolat</a>
+<a href="https://www.wellbeingsocialhub.hu/blog-index.html">Tudástár</a>
+</div>
+<div class="footer-col">
+<h4>Partner Stack</h4>
+<a href="https://fitpuli.hu" target="_blank">FitPuli</a>
+<a href="https://cheqbot.com" target="_blank">CHEQ</a>
+<a href="https://stressz-m.hu" target="_blank">Stressz-M</a>
+<a href="https://healthatwork.hu" target="_blank">Health at Work</a>
+<a href="https://galeriaoptika.hu/ceges-szemvizsgalat/" target="_blank">Galéria Optika</a>
+</div>
+<div class="footer-col">
+<h4>Jogi</h4>
+<a href="https://www.wellbeingsocialhub.hu/adatvedelmi.html">Adatkezelési tájékoztató</a>
+<a href="https://www.wellbeingsocialhub.hu/aszf.html">ÁSZF</a>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2026 Wellbeing Social Hub Kft. · Minden jog fenntartva · wellbeingsocialhub.hu</p>
+<div>
+<a href="https://www.wellbeingsocialhub.hu/adatvedelmi.html">Adatvédelem</a>
+<a href="https://www.wellbeingsocialhub.hu/aszf.html">ÁSZF</a>
+</div>
+</div>
+</footer>
+
+<!-- ═══════════════ SCRIPTS ════════════════════════════ -->
+<script>
+/* ── VISSZASZÁMLÁLÓ ──────────────────────────────────── */
+// 2026. május 20., 13:00 Budapest (CEST = UTC+2)
+const TARGET = new Date('2026-05-20T13:00:00+02:00');
+
+function pad(n){ return String(n).padStart(2,'0'); }
+
+function tickCountdown(){
+  const now  = new Date();
+  const diff = TARGET - now;
+
+  if(diff <= 0){
+    document.getElementById('cdUnits').style.display = 'none';
+    document.getElementById('cdLive').style.display  = 'block';
+    document.querySelector('.hcd-label').style.display = 'none';
+    return;
+  }
+  const d = Math.floor(diff / 86400000);
+  const h = Math.floor((diff % 86400000) / 3600000);
+  const m = Math.floor((diff % 3600000) / 60000);
+  const s = Math.floor((diff % 60000) / 1000);
+
+  document.getElementById('cd-d').textContent = pad(d);
+  document.getElementById('cd-h').textContent = pad(h);
+  document.getElementById('cd-m').textContent = pad(m);
+  document.getElementById('cd-s').textContent = pad(s);
+}
+tickCountdown();
+setInterval(tickCountdown, 1000);
+
+/* ── SMOOTH SCROLL ───────────────────────────────────── */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth',block:'start'}); }
+  });
+});
+</script>
+<script>
+(function(){
+  var b=document.querySelector('.hamburger'),m=document.querySelector('.nav-links');
+  if(!b||!m)return;
+  b.addEventListener('click',function(e){
+    e.stopPropagation();
+    b.classList.toggle('open');
+    m.classList.toggle('open');
+    b.setAttribute('aria-label',m.classList.contains('open')?'Menü bezárása':'Menü megnyitása');
+  });
+  document.addEventListener('click',function(e){
+    if(!m.contains(e.target)&&!b.contains(e.target)){b.classList.remove('open');m.classList.remove('open');}
+  });
+  m.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){b.classList.remove('open');m.classList.remove('open');});
+  });
+})();
+</script>
+</body>
+</html>
